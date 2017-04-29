@@ -21,8 +21,8 @@ public class E4_13_AddtionOfCountUp {
 		// 入力された値を扱うオブジェクトを作成する
 		Scanner standardInput = new Scanner(System.in);
 		
-		// カウントアップすることをメッセージで出力する
-		System.out.println("カウントアップします。");
+		// 出力内容の説明をメッセージで出力する
+		System.out.println("1 ~ n までの和を出力します。");
 		
 		// 入力が正しいかどうか判定する処理を行う
 		do {
@@ -64,12 +64,12 @@ public class E4_13_AddtionOfCountUp {
 
 		
 		// カウントアップの開始をメッセージで出力する
-		System.out.println("カウントアップを開始します。");
+		System.out.print("1 ~ " + inputValue + "までの和は : ");
 		
 		// 入力された値が 0 になるまで繰り返す
 		for ( ; inputValue >= 0; inputValue-- ) {
 			
-			// 出力回数をカウントする
+			// カウントした値を足していく
 			additionResult += outputCount++;
 			
 		}
