@@ -13,7 +13,7 @@ public class E4_9_OparateFactorial {
 		// 入力された値を保持する変数を -1 で初期化する
 		int inputValueN = -1;
 		
-		// 階乗の回数をカウントする変数を 0 で初期化する
+		// 階乗の回数をカウントする変数を 1 で初期化する
 		int factorialCounter = 1;
 		
 		// 階乗の結果を保持する変数を 1 で初期化する
@@ -57,7 +57,7 @@ public class E4_9_OparateFactorial {
 		while ( factorialCounter < inputValueN ) {
 			
 			// 処理の回数を数える
-			++factorialCounter;
+			factorialCounter++;
 			
 			// 階乗の結果を保持する
 			resultOfFactorial *= factorialCounter;
