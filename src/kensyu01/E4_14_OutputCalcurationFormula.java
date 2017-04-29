@@ -21,8 +21,8 @@ public class E4_14_OutputCalcurationFormula {
 		// 入力された値を扱うオブジェクトを作成する
 		Scanner standardInput = new Scanner(System.in);
 		
-		// カウントアップすることをメッセージで出力する
-		System.out.println("カウントアップします。");
+		// 出力内容の説明をメッセージで出力する
+		System.out.println("1 ~ n までの和を出力します。");
 		
 		// 入力が正しいかどうか判定する処理を行う
 		do {
@@ -61,10 +61,6 @@ public class E4_14_OutputCalcurationFormula {
 			
 		// 入力された値が 0 以下の場合は処理を繰り返す
 		} while ( inputValue <= 0 );
-
-		
-		// カウントアップの開始をメッセージで出力する
-		System.out.println("カウントアップを開始します。");
 		
 		// 入力された値が 0 になるまで繰り返す
 		for ( ; inputValue > 0; inputValue-- ) {
