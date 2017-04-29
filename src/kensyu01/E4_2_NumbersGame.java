@@ -21,9 +21,6 @@ public class E4_2_NumbersGame {
 		// 10 ~ 99 の乱数を作成し変数を初期化する
 		int Answer = randomValueGenerator.nextInt(90) + 10;
 
-		// debug
-		System.out.println("Answer  :  " + Answer);
-
 		// 入力された値を取得する為の機能を作成する
 		Scanner standardInput = new Scanner(System.in);
 
@@ -115,11 +112,3 @@ public class E4_2_NumbersGame {
 
 	}
 }
-
-
-
-
-/**
- * 正常正常
- * 正常異常正常
- */
