@@ -113,23 +113,24 @@ public class E4_3_BetweenValuesAtoB {
 		
 		
 		// A と B の うち 小さい方 + 1 を loopCount に設定する
-		loopCount = inputValueA < inputValueB ? inputValueA + 1 : inputValueB + 1; 
+		loopCount = inputValueA < inputValueB ? inputValueA : inputValueB + 1; 
 		
 		// A と B　のうち 大きい方を - 1 を endCount に設定する
-		endCount = inputValueA > inputValueB ? inputValueA - 1: inputValueB - 1; 
+		endCount = inputValueA > inputValueB ? inputValueA : inputValueB - 1; 
 		
 		
 		
 		// loopCount から endCount までの回数だけ処理を繰り返す
 		do {
 		
+			// loopCount に + 1 加算する
+			loopCount++;
+			
 			// loopCount を出力する
 			System.out.print( loopCount + " ");
 		
-			// loopCount に + 1 加算する
-			loopCount += 1;
 		
-		} while ( loopCount <= endCount );
+		} while ( loopCount < endCount );
 			
 		
 		
