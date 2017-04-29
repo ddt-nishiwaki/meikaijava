@@ -48,7 +48,7 @@ public class E4_7_PutSymbol {
 			System.out.print(loopCount % 2 == 0 ? "*" : "+");
 			
 			// 処理回数をカウントする
-			++loopCount;
+			loopCount++;
 			
 		}
 		
