@@ -14,7 +14,7 @@ public class E4_6_PutAsterisk1 {
 		int inputValue = 0;
 		
 		// ループ回数をカウントする変数を 0 で初期化する
-		int LOOP_COUNT = 0;
+		int loop_count = 0;
 		
 
 		// 入力した値を扱うオブジェクトの作成
@@ -55,12 +55,12 @@ public class E4_6_PutAsterisk1 {
 		do {
 
 			// 入力された値をインクリメントする
-			LOOP_COUNT++;
+			loop_count++;
 			
 			// アスタリスクを出力する
 			System.out.print("*");
 			
-		} while ( inputValue > LOOP_COUNT );
+		} while ( inputValue > loop_count );
 		
 		
 		// 改行文字を出力する
