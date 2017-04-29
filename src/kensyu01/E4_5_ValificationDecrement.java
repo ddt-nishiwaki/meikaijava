@@ -65,7 +65,7 @@ public class E4_5_ValificationDecrement {
 			 */
 		}
 		
-		
+		// 入力ストリームを閉じる
 		standardInput.close();
 	}
 	
