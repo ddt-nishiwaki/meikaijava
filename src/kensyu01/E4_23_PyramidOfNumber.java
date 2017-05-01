@@ -3,8 +3,7 @@ package kensyu01;
 // 入力された値を扱う機能の読み込みを行う
 import java.util.Scanner;
 
-// 入力された値からピラミッドを描画するクラス
-public class E4_22_PyramidGenerator {
+public class E4_23_PyramidOfNumber {
 
 	// int型変数を初期化するための値を設定する
 	public static final int INITIALIZATION_INTEGER = 0;
@@ -12,8 +11,8 @@ public class E4_22_PyramidGenerator {
 	// String型変数を初期化するための値を設定する
 	public static final String INITIALIZATION_STRING = "";
 	
-	// ピラミッドを描画するための記号を設定する
-	public static final String DRAW_SYMBOL = "*";
+	// ピラミッドを描画に使用する一桁の数を求める値を設定する
+	public static final int VALUE_OF_KEEP_A_DIGIT = 10;
 	
 	// オフセットを描画するための文字を設定する
 	public static final String OFFSET_CHARACTOR = " ";
@@ -34,10 +33,10 @@ public class E4_22_PyramidGenerator {
 	
 	
 	
-	// 段数の値をピラミッドの中心を除いた左右片方のの直角三角形の幅を求めるための値を設定する
+	// ピラミッドの中心を除いた左右片方のの直角三角形の幅に変換するための値を設定する
 	public static final int VALUE_OF_CONVERT_SIDE_TRIANGLE = -1;
 	
-	// 二つの直角三角形の幅を合わせた値を求めるための値を設定する
+	// 二つの直角三角形の幅を合わせるための値を設定する
 	public static final int VALUE_OF_MERGE_SIDE_TRIANGLES = 2;
 	
 	// 中心の幅を設定する
@@ -53,7 +52,9 @@ public class E4_22_PyramidGenerator {
 		// ピラミッドの段数の入力を保持する変数を初期化する
 		int pyramidStageValue = INITIALIZATION_INTEGER;
 		
+
 		
+
 		
 		
 		// ピラミッドの高さの入力を促すメッセージを出力する
@@ -66,6 +67,10 @@ public class E4_22_PyramidGenerator {
 		
 		//ピラミッドを描画する
 		for (int stageCount = VALUE_OF_COUNT_START ; stageCount <= pyramidStageValue; stageCount++) {
+			
+			// 段を描画するための数値を設定する
+			int valueOfDrawStage = stageCount % VALUE_OF_KEEP_A_DIGIT; 
+			
 			
 			// ピラミッドの各段の幅を計算する
 			int stageWidthViewValue = ( stageCount + VALUE_OF_CONVERT_SIDE_TRIANGLE ) * VALUE_OF_MERGE_SIDE_TRIANGLES + VALUE_OF_PYRAMID_CENTER_WIDTH;
@@ -83,7 +88,7 @@ public class E4_22_PyramidGenerator {
 			for ( int columnCount = VALUE_OF_COUNT_START; columnCount <= stageWidthViewValue; columnCount++) {
 				
 				//  描画範囲のテキストを作成する
-				stageWidthView += DRAW_SYMBOL;
+				stageWidthView += valueOfDrawStage;
 				
 			}
 			
