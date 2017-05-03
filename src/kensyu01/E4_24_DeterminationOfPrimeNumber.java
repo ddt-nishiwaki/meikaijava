@@ -6,117 +6,82 @@ import java.util.Scanner;
 // 値が素数かどうか判定するクラス
 public class E4_24_DeterminationOfPrimeNumber {
 
+	//// 定数初期化 ///////////////////////////////////////////
+
 	// int型変数を初期化するための値を設定する
-	public static final int INITIALIZATION_INTEGER = 0;
-	
-	// 最初の素数を設定しておく
+	public static final int INITIALIZE_INTEGER = 0;
+	// Strint型変数を初期化するための値を設定する
+	public static final String INITIALIZE_STRING = "";
+	// 最初の素数を設定する
 	public static final int FIRST_PRIME_NUMBER = 2;
+	// 整数値の入力を求めるメッセージを設定する
+	public static final String MESSAGE_INTEGER_INPUT = "整数値を入力してください";
+	// 素数であることを示すメッセージを出力する
+	public static final String MESSAGE_PRIME_NUMBER = "素数です";
+	// 素数でないことを示すメッセージを設定する
+	public static final String MESSAGE_NOT_PRIME = "素数ではありません";
+
 	
-	// 素数を判定するための値を設定する
-	public static final int VALUE_OF_JADGE_NOT_PRIME_NUMBER = 0;
-	
-	// 繰り返し処理の最初のカウントを設定する
-	public static final int VALUE_OF_COUNT_START = 1;
-	
-	// プログラムの処理内容をテキストで設定する
-	public static final String MESSAGE_OF_DETERMINATION_OF_PRIME_NUMBER = "素数を判定します 。";
-	
-	// 整数値の入力を促すメッセージを設定する
-	public static final String MESSAGE_OF_REQEST_INPUT_INTEGER = "整数値を入力してください。"; 
-	
-	// 素数ではないことを示すメッセージを設定する
-	public static final String MESSAGE_OF_NOT_PRIME_NUMBER = "素数ではありません。";
-	
-	// 素数であることを示すメッセージを設定する
-	public static final String MESSAGE_OF_PRIME_NUMBER = "素数です。";
-	
-	
+	//// メソッド ///////////////////////////////////////////
+
 	// 値が素数かどうか判定する処理を行う
-	public static void main(String[] arg) {
-		
+	public static void main (String[] arg) {
+
+		//// 変数初期化 ///////////////////////////////////////////
+
 		// 整数値の入力を扱うオブジェクトを作成する
 		Scanner integerValueInput = new Scanner(System.in);
-		
-		// 入力された整数値を保持する変数を初期化する
-		int integerValue = INITIALIZATION_INTEGER;
-		
-		// これから行う処理をメッセージで出力する
-		System.out.println(MESSAGE_OF_DETERMINATION_OF_PRIME_NUMBER);
-		
-		// 整数値の入力を促すメッセージを出力する
-		System.out.println(MESSAGE_OF_REQEST_INPUT_INTEGER);
-		
-		// 入力された整数値を変数に保持する
+		// 整数値の入力を保持する変数を初期化する
+		int integerValue = INITIALIZE_INTEGER;
+		// 割り切れるか調べるための変数を初期化する
+		int divisor = FIRST_PRIME_NUMBER;
+		// 調べた約数を保持する変数を初期化する
+		int resultDivisor = INITIALIZE_INTEGER;
+
+
+		//// 整数値の入力処理 ///////////////////////////////////////////
+
+		// 整数値の入力を求めるメッセージを出力する
+		System.out.println(MESSAGE_INTEGER_INPUT);
+		// 入力された値を保持する
 		integerValue = integerValueInput.nextInt();
-		
-		// 入力された値が2の整数だった場合の処理を行う
-		if ( integerValue == FIRST_PRIME_NUMBER ) {
-		
-			// 素数であることをメッセージで出力する
-			System.out.println(integerValue + "は" + MESSAGE_OF_PRIME_NUMBER);
-			
-			// 整数の入力ストリームを閉じる
-			integerValueInput.close();
-		
-			// プログラムを終了する
-			return;
 
-		} else if ( integerValue < FIRST_PRIME_NUMBER ) {
-			
-			// 素数ではないことをメッセージで出力する
-			System.out.println(MESSAGE_OF_NOT_PRIME_NUMBER);
-			
-			// 整数の入力ストリームを閉じる
-			integerValueInput.close();
 		
-			// プログラムを終了する
-			return;
-			
+		//// 素数判定処理 ///////////////////////////////////////////
+		
+		// 入力された値が 2未満の場合は その値を結果として保持する
+		if (integerValue < FIRST_PRIME_NUMBER ) {
+			resultDivisor = integerValue;
 		}
-			
-		// 入力された値が偶数だった場合の処理を行う
-		if ( integerValue % FIRST_PRIME_NUMBER ==  VALUE_OF_JADGE_NOT_PRIME_NUMBER ) {
-		
-			// 素数ではないことをメッセージで出力する
-			System.out.println(MESSAGE_OF_NOT_PRIME_NUMBER);
-			
-			// 整数の入力ストリームを閉じる
-			integerValueInput.close();
-		
-			// プログラムを終了する
-			return;
-			
-		}
-
-		
-		
-		// 最初の素数 ~ 入力された値未満 まで繰り返す
-		for ( int count = FIRST_PRIME_NUMBER; count < integerValue; count++ ) {
-		
-			// 入力された値が素数ではなかった(割り切れた)場合の処理を行う
-			if ( integerValue % count == VALUE_OF_JADGE_NOT_PRIME_NUMBER ) {
-	
-				// 素数ではないことをメッセージで出力する
-				System.out.println(MESSAGE_OF_NOT_PRIME_NUMBER);
-				
-				// 整数の入力ストリームを閉じる
-				integerValueInput.close();
-
-				// プログラムを終了する
-				return;
+		// 入力された値が 2 以上の場合、割り切れる数を調べる
+		while( divisor <= integerValue ) {
+			// 割り切れた時の処理
+			if ( integerValue % divisor == 0 ) {
+				// その約数を保持する
+				resultDivisor = divisor;
+				// 次の処理へ進む
+				break;
 			}
+			// 調査する数を次の値に変える
+			divisor++;
 		}
 
-
-		// 素数であることをメッセージで出力する
-		System.out.println(integerValue + "は" + MESSAGE_OF_PRIME_NUMBER);
 		
-		// 整数の入力ストリームを閉じる
+		//// 判定結果出力処理 ///////////////////////////////////////////
+		
+		// 調べた結果が 素数の条件に満たない場合 の処理を行う
+		if ( resultDivisor < FIRST_PRIME_NUMBER || resultDivisor < integerValue){
+			// 素数でないことを出力する
+			System.out.println(MESSAGE_NOT_PRIME);
+		// それ以外の場合の処理を行う
+		} else {
+			// 素数であることを出力する
+			System.out.println(MESSAGE_PRIME_NUMBER);
+		}
+
+		//// 終了処理 ///////////////////////////////////////////
+		
+		// 整数値入力ストリームを閉じる
 		integerValueInput.close();
-
-		// プログラムを終了する
-		return;
-		
-				
 	}
 }
