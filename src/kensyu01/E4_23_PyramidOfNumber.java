@@ -18,11 +18,9 @@ public class E4_23_PyramidOfNumber {
 	public static final String OFFSET_CHARACTOR = " ";
 	
 	
-	// 非表示範囲を設定するための処理開始時のカウントを設定する
-	public static final int VALUE_OF_REVERSE_START = 0;
 	
 	// 表示範囲を設定するための処理開始時のカウントを設定する
-	public static final int VALUE_OF_COUNT_START = 1;
+	public static final int VALUE_OF_COUNT_START = 0;
 
 	
 	// ピラミッドサイズの入力を促すメッセージを設定する
@@ -68,6 +66,14 @@ public class E4_23_PyramidOfNumber {
 		//ピラミッドを描画する
 		for (int stageCount = VALUE_OF_COUNT_START ; stageCount <= pyramidStageValue; stageCount++) {
 			
+			// stageCountが0のときの処理
+			if ( stageCount == VALUE_OF_COUNT_START ) {
+				
+				//処理を飛ばす
+				continue;
+
+			}
+			
 			// 段を描画するための数値を設定する
 			int valueOfDrawStage = stageCount % VALUE_OF_KEEP_A_DIGIT; 
 			
@@ -85,7 +91,7 @@ public class E4_23_PyramidOfNumber {
 			int offsetValue = pyramidStageValue - stageCount;
  
 			// 格段の描画範囲を設定する
-			for ( int columnCount = VALUE_OF_COUNT_START; columnCount <= stageWidthViewValue; columnCount++) {
+			for ( int columnCount = VALUE_OF_COUNT_START; columnCount < stageWidthViewValue; columnCount++) {
 				
 				//  描画範囲のテキストを作成する
 				stageWidthView += valueOfDrawStage;
@@ -93,7 +99,7 @@ public class E4_23_PyramidOfNumber {
 			}
 			
 			// 格段表示までのオフセットを空白文字で設定する
-			for (int columnCount = VALUE_OF_REVERSE_START; columnCount < offsetValue; columnCount++){
+			for (int columnCount = VALUE_OF_COUNT_START; columnCount < offsetValue; columnCount++){
 				
 				// 描画範囲までのオフセット文字を作成する
 				offsetWidthView += OFFSET_CHARACTOR;
