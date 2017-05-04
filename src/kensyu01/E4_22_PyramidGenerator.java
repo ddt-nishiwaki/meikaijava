@@ -19,11 +19,8 @@ public class E4_22_PyramidGenerator {
 	public static final String OFFSET_CHARACTOR = " ";
 	
 	
-	// 非表示範囲を設定するための処理開始時のカウントを設定する
-	public static final int VALUE_OF_REVERSE_START = 0;
-	
 	// 表示範囲を設定するための処理開始時のカウントを設定する
-	public static final int VALUE_OF_COUNT_START = 1;
+	public static final int VALUE_OF_COUNT_START = 0;
 
 	
 	// ピラミッドサイズの入力を促すメッセージを設定する
@@ -67,8 +64,13 @@ public class E4_22_PyramidGenerator {
 		//ピラミッドを描画する
 		for (int stageCount = VALUE_OF_COUNT_START ; stageCount <= pyramidStageValue; stageCount++) {
 			
-			// ピラミッドの各段の幅を計算する
-			int stageWidthViewValue = ( stageCount + VALUE_OF_CONVERT_SIDE_TRIANGLE ) * VALUE_OF_MERGE_SIDE_TRIANGLES + VALUE_OF_PYRAMID_CENTER_WIDTH;
+			// stageCount が 0 のときは何もしない
+			if ( stageCount == 0 ) {
+				//処理を飛ばす
+				continue;
+			}
+			
+			int stageWidthViewValue = (stageCount + VALUE_OF_CONVERT_SIDE_TRIANGLE) * VALUE_OF_MERGE_SIDE_TRIANGLES + VALUE_OF_PYRAMID_CENTER_WIDTH;
 			
 			// ピラミッドの格段を描画する文字列を保持する変数を初期化する
 			String stageWidthView = INITIALIZATION_STRING;
@@ -80,7 +82,7 @@ public class E4_22_PyramidGenerator {
 			int offsetValue = pyramidStageValue - stageCount;
  
 			// 格段の描画範囲を設定する
-			for ( int columnCount = VALUE_OF_COUNT_START; columnCount <= stageWidthViewValue; columnCount++) {
+			for ( int columnCount = VALUE_OF_COUNT_START; columnCount < stageWidthViewValue; columnCount++) {
 				
 				//  描画範囲のテキストを作成する
 				stageWidthView += DRAW_SYMBOL;
@@ -88,7 +90,7 @@ public class E4_22_PyramidGenerator {
 			}
 			
 			// 格段表示までのオフセットを空白文字で設定する
-			for (int columnCount = VALUE_OF_REVERSE_START; columnCount < offsetValue; columnCount++){
+			for (int columnCount = VALUE_OF_COUNT_START; columnCount < offsetValue; columnCount++){
 				
 				// 描画範囲までのオフセット文字を作成する
 				offsetWidthView += OFFSET_CHARACTOR;
