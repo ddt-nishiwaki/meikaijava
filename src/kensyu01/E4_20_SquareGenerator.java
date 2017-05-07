@@ -27,29 +27,22 @@ public class E4_20_SquareGenerator {
 		// 正方形サイズの値を保持する変数を初期化する
 		int squareSize = INITIALIZATION_INTEGER;
 		
-		// 正方形の幅を描画する文字列を保持する変数を初期化する
-		String squareWidth = INITIALIZATION_STRING;
-		
 		// 正方形サイズの入力を促すメッセージを出力する
 		System.out.println(MESSAGE_OF_SQUARE_GENERATOR);
 		
 		// 入力された正方形サイズの値を変数に保持する
 		squareSize = squareSizeInput.nextInt();
 		
-		// 入力された正方形サイズの値分のアスタリスクを設定する
-		for ( int count = 0; count < squareSize; count++ ) {
-			
-			// 正方形の幅を描画する文字列を設定する
-			squareWidth += DRAW_SYMBOL;
-			
-		}
 		
 		// 入力された正方形サイズの値から正方形を描画する
-		for ( int count = INITIALIZATION_INTEGER; count < squareSize; count++ ) {
-			
-			// 正方形の幅を描画する
-			System.out.println(squareWidth);
-			
+		for ( int rowCount = INITIALIZATION_INTEGER; rowCount < squareSize; rowCount++ ) {
+			// 入力されたサイズ分の文字を出力する
+			for ( int columnCount = 0; columnCount < squareSize; columnCount++ ) {
+				// 描画用文字を出力する
+				System.out.print(DRAW_SYMBOL);
+			}
+			// 改行を出力する
+			System.out.println();
 		}
 
 		 
