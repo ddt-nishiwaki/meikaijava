@@ -68,7 +68,7 @@ public class E6_6_ScoringInformation {
 			}
 		}
 		// 平均点を求める
-		averageResult = sumResult/timesScoring;
+		averageResult = (float)sumResult/timesScoring;
 		
 		// 合計点を表示する
 		System.out.printf("合計点は%dです\n", sumResult);
