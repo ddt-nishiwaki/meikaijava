@@ -7,19 +7,19 @@ import java.util.Scanner;
 public class E4_26_SumContinue {
 	
 	// int型整数を初期化する値を設定する
-	public static final int INITIALIZE_INTEGER = 0;
+	private static final int INITIALIZE_INTEGER = 0;
 	// 処理内容を説明するメッセージを設定する
-	public static final String MESSAGE_PROCESSING = "整数を加算します。";
+	private static final String MESSAGE_PROCESSING = "整数を加算します。";
 	// 入力回数の設定を求めるメッセージを設定する
-	public static final String MESSAGE_REQEST_TIMES = "何回入力しますか？";
+	private static final String MESSAGE_REQEST_TIMES = "何回入力しますか？";
 	// 加算する値の入力を求めるメッセージを設定する
-	public static final String MESSAGE_REQUEST_INTEGER = "整数値を入力してください。";
+	private static final String MESSAGE_REQUEST_INTEGER = "整数値を入力してください。";
 	// 負の値は加算しないことを説明するメッセージ定する
-	public static final String MESSAGE_INVAILD_VALUE = "負の値は加算しません。";
+	private static final String MESSAGE_INVAILD_VALUE = "負の値は加算しません。";
 	// テキスト「合計」を設定する
-	public static final String TEXT_TOTAL = "合計";
+	private static final String TEXT_TOTAL = "合計";
 	// テキスト「平均」を設定する
-	public static final String TEXT_AVARAGE = "平均";
+	private static final String TEXT_AVARAGE = "平均";
 	
 	/*************************************************************/
 	
@@ -27,7 +27,7 @@ public class E4_26_SumContinue {
 	public static void main (String[] arg) {
 		
 		// 整数値の入力を扱うオブジェクトを作成する
-		Scanner integerValue = new Scanner(System.in);
+		Scanner scannerSumAverageOperand = new Scanner(System.in);
 		// 加算結果を保持する変数を初期化する
 		int sumValue = INITIALIZE_INTEGER;
 		// 処理回数をカウントする変数を初期化する
@@ -40,14 +40,14 @@ public class E4_26_SumContinue {
 		// 入力回数の設定を求めるメッセージを出力する
 		System.out.println(MESSAGE_REQEST_TIMES);
 		// 入力された値を保持する
-		int operateTimes = integerValue.nextInt();
+		int operateTimes = scannerSumAverageOperand.nextInt();
 		
 		// 設定された入力回数分処理を行う
 		for ( int count = INITIALIZE_INTEGER; count < operateTimes; count++ ) {
 			// 加算する値の入力を求めるメッセージを出力する
 			System.out.println(MESSAGE_REQUEST_INTEGER);
 			// 入力された値を一時的に保持する
-			int temp = integerValue.nextInt();
+			int temp = scannerSumAverageOperand.nextInt();
 			// 入力された値が負の値だった場合の処理
 			if ( temp < 0 ) {
 				// 負の値は加算しないことをメッセージで出力する
@@ -71,6 +71,6 @@ public class E4_26_SumContinue {
 		/*********************************************************/
 
 		// 整数値の入力ストリームを閉じる
-		integerValue.close();
+		scannerSumAverageOperand.close();
 	}
 }
