@@ -11,37 +11,37 @@ import java.util.Scanner;
 public class E4_27_NumbersGameWithLimitTimes {
 
 	// int型変数の値を初期化するための値を設定する
-	public static final int INITIALIZE_INTEGER = 0;
+	private static final int INITIALIZE_INTEGER = 0;
 	// 乱数の上限1を設定する
-	public static final int LIMIT_OF_RAND = 99;
+	private static final int LIMIT_OF_RAND = 99;
 	// 乱数の値の範囲をシフトさせる値を設定する
-	public static final int SHIFT_OF_RAND = 10;
+	private static final int SHIFT_OF_RAND = 10;
 	// 乱数の生成に使う値を生成する
-	public static final int SEED_OF_RAND = LIMIT_OF_RAND - SHIFT_OF_RAND + 1;
+	private static final int SEED_OF_RAND = LIMIT_OF_RAND - SHIFT_OF_RAND + 1;
 	// 回答数を設定する
-	public static final int TIMES_OF_ANSWER = 5;
+	private static final int TIMES_OF_ANSWER = 10;
 	// ゲームのルール説明をするメッセージを設定する
-	public static final String MESSAGE_ROURE_GAME = "10 ~ 99 のいずれかの値が作成されましたので同じ値を入力してください :  (終了する場合は q を入力 )";
+	private static final String MESSAGE_ROURE_GAME = "10 ~ 99 のいずれかの値が作成されましたので同じ値を入力してください :  (終了する場合は q を入力 )";
 	// ゲームの終了のメッセージを設定する
-	public static final String MESSAGE_END_GAME = "プログラムを終了します。";
+	private static final String MESSAGE_END_GAME = "プログラムを終了します。";
 	// 入力が間違っていることを示すメッセージを設定する
-	public static final String MESSAGE_COUTION_INPUT = "入力した値が間違っています。";
+	private static final String MESSAGE_COUTION_INPUT = "入力した値が間違っています。";
 	// 入力範囲を際説明するメッセージを出力する
-	public static final String MESSAGE_RANGE_ROURE = "入力は 10 ~ 99 の範囲でお願いします。";
+	private static final String MESSAGE_RANGE_ROURE = "入力は 10 ~ 99 の範囲でお願いします。";
 	// 再入力を求めるメッセージを設定する
-	public static final String MESSAGE_REPEAT_INPUT = "もう一度入力してください。 (終了する場合は q を入力 )";
+	private static final String MESSAGE_REPEAT_INPUT = "もう一度入力してください。 (終了する場合は q を入力 )";
 	// もっと大きい数であるヒントのメッセージを設定する
-	public static final String MESSAGE_HINT_BIG = "もっと大きい数です。いくつでしょうか？ : ";
+	private static final String MESSAGE_HINT_BIG = "もっと大きい数です。いくつでしょうか？ : ";
 	// もっと小さい数であるヒントのメッセージを設定する
-	public static final String MESSAGE_HINT_SMALL = "もっと小さい数です。いくつでしょうか？ : ";
+	private static final String MESSAGE_HINT_SMALL = "もっと小さい数です。いくつでしょうか？ : ";
 	// 正解した時のメッセージを設定する
-	public static final String MESSAGE_COMPLETE = "正解です。";
+	private static final String MESSAGE_COMPLETE = "正解です。";
 	// 正解できなかった時のメッセージを設定する
-	public static final String MESSAGE_FAILD = "残念!";
+	private static final String MESSAGE_FAILD = "残念!";
 	// テキスト「正解」を設定する
-	public static final String TEXT_ANSWER = "正解";
+	private static final String TEXT_ANSWER = "正解";
 	// テキスト「残りの回答数」を設定する
-	public static final String TEXT_ANOTHER_TIMES = "残りの回答数";
+	private static final String TEXT_ANOTHER_TIMES = "残りの回答数";
 	
 	
 	
@@ -57,7 +57,7 @@ public class E4_27_NumbersGameWithLimitTimes {
 		// 回答数をカウントする変数を初期化する
 		int answerCount = INITIALIZE_INTEGER;
 		// 入力された値を取得する為の機能を作成する
-		Scanner standardInput = new Scanner(System.in);
+		Scanner scannerGameControl = new Scanner(System.in);
 		// 入力された値を保持する為の変数を 0 で初期化する
 		int inputValue = INITIALIZE_INTEGER;
 		// 作成された乱数と同じ数を入力するようにメッセージを出力する
@@ -70,25 +70,25 @@ public class E4_27_NumbersGameWithLimitTimes {
 
 		// 数当てが成功するまで処理を繰り返す
 		do {
-			// 入力された値が整数以外の場合の処理を行う
-			if ( !standardInput.hasNextInt() ) {
+			// 終了コマンドが入力された時の処理を行う
+			if( scannerGameControl.hasNext("q") ) {
+				// 終了コマンドを実行することをメッセージで出力する
+				System.out.println(MESSAGE_END_GAME);
+				// 入力用ストリームを閉じる
+				scannerGameControl.close();
+				// プログラムを終了する
+				return;
+			}
+			// q以外の整数ではない値が入力された場合の処理を行う
+			if ( !scannerGameControl.hasNextInt() ) {
 
-				// 終了コマンドが入力された時の処理を行う
-				if( standardInput.hasNext("q") ) {
-					// 終了コマンドを実行することをメッセージで出力する
-					System.out.println(MESSAGE_END_GAME);
-					// 入力用ストリームを閉じる
-					standardInput.close();
-					// プログラムを終了する
-					return;
-				}
 				// 入力された値が間違えていることをメッセージで出力する
 				System.out.println(MESSAGE_COUTION_INPUT);
 				// 再入力を求めるメッセージを出力する
 				System.out.println(MESSAGE_REPEAT_INPUT);
 				
-				// standardInputのトークンを次に移動させる
-				standardInput.next();
+				// scannerGameControlのトークンを次に移動させる
+				scannerGameControl.next();
 
 			// 入力された値が整数だった場合の処理を行う
 			} else {
@@ -105,7 +105,7 @@ public class E4_27_NumbersGameWithLimitTimes {
 				System.out.println(TIMES_OF_ANSWER - answerCount);
 
 				// 入力された値を変数に保持する
-				inputValue = standardInput.nextInt();
+				inputValue = scannerGameControl.nextInt();
 				// 入力された値が 10 ~ 99 でない場合の処理を行う
 				if ( inputValue < SHIFT_OF_RAND || inputValue > LIMIT_OF_RAND ) {
 
@@ -135,7 +135,7 @@ public class E4_27_NumbersGameWithLimitTimes {
 		// 数当てが成功した場合の処理を行う
 		if ( inputValue == answer ) {
 			// 数当てに成功したことをメッセージで出力する
-			System.out.println("正解です。");
+			System.out.println(MESSAGE_COMPLETE);
 		// 数当てが失敗した時の処理を行う
 		} else {
 			// 数当てが失敗したことをメッセージで出力する
@@ -146,7 +146,7 @@ public class E4_27_NumbersGameWithLimitTimes {
 		// プログラムの終了をメッセージで出力する
 		System.out.println("プログラムを終了します。");
 		// 入力用のストリームを閉じる
-		standardInput.close();
+		scannerGameControl.close();
 
 	}
 }
