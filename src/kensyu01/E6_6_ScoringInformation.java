@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class E6_6_ScoringInformation {
 
 	// 数値型変数を初期化する値を設定する
-	public static final int INITIALIZE_NUMERIC = 0;
+	private static final int INITIALIZE_NUMERIC = 0;
 	// 採点人数の設定を求めるメッセージを設定する
-	public static final String REQUEST_TIMES_MARKING = "採点人数を設定してください";
+	private static final String REQUEST_TIMES_MARKING = "採点人数を設定してください";
 	// 採点を求める文字列のフォーマットを設定する
-	public static final String REQUEST_SCORE_FORMAT = "%d番目の点数 : ";
+	private static final String REQUEST_SCORE_FORMAT = "%d番目の点数 : ";
 	
 	
 	/*************************************************************/
@@ -37,11 +37,11 @@ public class E6_6_ScoringInformation {
 		/*************************************************************/
 
 		// 採点に関する入力を扱うオブジェクトを作成する
-		Scanner markingInput = new Scanner(System.in);
+		Scanner scanneMrarking = new Scanner(System.in);
 		// 採点人数の設定を求めるメッセージを出力する
 		System.out.println(REQUEST_TIMES_MARKING);
 		// 入力された人数を変数に保持する
-		timesScoring = markingInput.nextInt();
+		timesScoring = scanneMrarking.nextInt();
 		
 		// 人数分の採点を格納する配列を作成する
 		int[] scoringArray = new int[timesScoring];
@@ -50,7 +50,7 @@ public class E6_6_ScoringInformation {
 			// 採点入力を求める文字列を出力する
 			System.out.printf(REQUEST_SCORE_FORMAT, count);
 			// 入力された点数を配列に格納する
-			scoringArray[count] = markingInput.nextInt();
+			scoringArray[count] = scanneMrarking.nextInt();
 		}
 		
 		// 点数を格納した配列を走査する	
@@ -83,7 +83,7 @@ public class E6_6_ScoringInformation {
 		/*************************************************************/
 
 		// 採点に関する入力ストリームを閉じる
-		markingInput.close();
+		scanneMrarking.close();
 		
 	}
 }
