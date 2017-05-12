@@ -4,19 +4,19 @@ package kensyu01;
 public class E5_6_Gap_Of_Floating_Value {
 
 		// 数値型変数を初期化するための値を設定する
-		public static final int INITIALIZE_NUMERIC = 0;
+		private static final int INITIALIZE_NUMERIC = 0;
 		// テキスト「float」を設定する
-		public static final String TEXT_FLOAT = "float";
+		private static final String TEXT_FLOAT = "float";
 		// テキスト「int」を設定する
-		public static final String TEXT_INT = "int";
+		private static final String TEXT_INT = "int";
 		// カラム名間の余白を設定する
-		public static final String STRING_OFFSET_COLUMN = "\t\t";
+		private static final String STRING_OFFSET_COLUMN = "\t\t";
 		// 出力結果間の余白を設定する
-		public static final String STRING_OFFSET_RESULT = "\t";
+		private static final String STRING_OFFSET_RESULT = "\t";
 		// 区切り線を文字列で設定する
-		public static final String STRING_LINE = "------------------------------------";
+		private static final String STRING_LINE = "------------------------------------";
 		// 処理回数を設定する
-		public static final int TIMES_OPERATION = 1000;
+		private static final int TIMES_OPERATION = 1000;
 	
 
 	/*********************************************************/
