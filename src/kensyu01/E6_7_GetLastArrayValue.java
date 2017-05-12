@@ -17,8 +17,6 @@ public class E6_7_GetLastArrayValue {
 	private static final String REQUEST_ARRAY_LENGTH = "配列の長さを設定してください";
 	// 配列の全要素の値をを出力する旨のメッセージを設定する
 	private static final String MESSAGE_OUTPUT_ALL = "配列の全要素の値を出力します";
-	// 末尾の値を出力する旨のメッセージのフォーマットを設定する
-	private static final String FORMAT_OUTPUT_LAST = "配列の末尾の値は %d です";
 	// 各値の区切り文字を設定する
 	private static final String VALUE_SEPARATOR = " ";
 	// 配列の値を出力する際の括弧開きを設定する
@@ -29,7 +27,14 @@ public class E6_7_GetLastArrayValue {
 	private static final int RANGE_RANDOM = 10;
 	// 配列の末尾のインデックスを取得するための値を設定する
 	private static final int SHIFT_LAST_INDEX = -1;
-	
+	// 検索する値の入力を求めるメッセージを設定する
+	private static final String MESSAGE_REQEST_SEARCH_NUMBER = "検索する値を入力してください";
+	// 配列の最初のインデックスを設定する
+	private static final int FIRST_INDEX_OF_ARRAY = 0;
+	// 検索がヒットした時の結果を出力するためのフォーマットを設定する
+	private static final String FORMAT_OUTPUT_LAST_INDEX = "それは ramdomArray[%d]にあります\n";
+	// 検索がヒットしなかった場合のメッセージを出力する
+	private static final String MESSAGE_NOTFOUND = "検索した値はみつかりませんでした";
 	
 	/**********************************************************/
 	
@@ -38,9 +43,12 @@ public class E6_7_GetLastArrayValue {
 		
 		// 要素数の入力を保持する変数を初期化する
 		int arrayLength = INITIALIZE_NUMERIC;
-
+		// 検索する値を保持する変数を初期化する
+		int valueToScan = INITIALIZE_NUMERIC;
+		// 設定された配列の最後のインデックスを設定する変数を初期化する
+		int lastIndexOfArray = INITIALIZE_NUMERIC;
 		// 要素数の入力を扱うオブジェクトを作成する
-		Scanner ScannerArraylength = new Scanner(System.in);
+		Scanner scannerArrayControl = new Scanner(System.in);
 		// 配列に設定する乱数を生成するオブジェクトを作成する
 		Random arrayValueGenerator = new Random();
 		
@@ -50,7 +58,7 @@ public class E6_7_GetLastArrayValue {
 		// 要素数の入力を求めるメッセージを出力する
 		System.out.println(REQUEST_ARRAY_LENGTH);
 		// 入力された要素数を保持する
-		arrayLength = ScannerArraylength.nextInt();
+		arrayLength = scannerArrayControl.nextInt();
 		// 保持した要素数から配列を作成する
 		int[] randomArray = new int[arrayLength];
 		// 配列に値を設定していく
@@ -75,13 +83,36 @@ public class E6_7_GetLastArrayValue {
 		// 各インデックスの値を示す文字列を括弧で閉じる
 		System.out.println(VALUE_SEPARATOR + LAST_OUTPUT);
 		
-		// 末尾の値を出力する
-		System.out.printf(FORMAT_OUTPUT_LAST,randomArray[arrayLength + SHIFT_LAST_INDEX]);
-
+		// 検索する値の入力を求めるメッセージを出力する
+		System.out.println(MESSAGE_REQEST_SEARCH_NUMBER);
+		
+		// 入力された検索対象を保持する
+		valueToScan = scannerArrayControl.nextInt();
+		
+		// 設定された配列の最後のインデックスを設定する
+		lastIndexOfArray = arrayLength + SHIFT_LAST_INDEX;
+		
+		int searchIndex;			// 検索するインデックスをカウントする変数を宣言する
+		// 配列の後方から検索する値のインデックスを探す
+		for ( searchIndex = lastIndexOfArray; searchIndex > FIRST_INDEX_OF_ARRAY; searchIndex-- ) {
+			// 検索する値と同じ値が見つかった場合の処理を行う
+			if (randomArray[searchIndex] == valueToScan) {
+				// 現在のインデックスを出力する
+				System.out.printf(FORMAT_OUTPUT_LAST_INDEX, searchIndex);
+				// 検索を終了する
+				break;
+			}
+		}
+			
+		// 検索した値が配列になかった場合の処理を行う
+		if(searchIndex == FIRST_INDEX_OF_ARRAY ){
+			// 値がなかったことをメッセージで出力する
+			System.out.println(MESSAGE_NOTFOUND);
+		}
 
 		/***************************************************/
 
 		// 要素数の入力ストリームを閉じる
-		ScannerArraylength.close();
+		scannerArrayControl.close();
 	}
 }
