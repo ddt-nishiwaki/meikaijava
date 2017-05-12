@@ -4,19 +4,19 @@ package kensyu01;
 public class E5_7_Operation_Float_Squaring {
 
 		// 数値型変数を初期化するための値を設定する
-		public static final int INITIALIZE_NUMERIC = 0;
+		private static final int INITIALIZE_NUMERIC = 0;
 		// テキスト「カウントした値」を設定する
-		public static final String TEXT_COUNT_VALUE = "カウントした値";
+		private static final String TEXT_COUNT_VALUE = "カウントした値";
 		// テキスト「二乗した値」を設定する
-		public static final String TEXT_SQUARING_VALUE = "二乗した値";
+		private static final String TEXT_SQUARING_VALUE = "二乗した値";
 		// カラム名間の余白を設定する
-		public static final String STRING_OFFSET_COLUMN = "\t";
+		private static final String STRING_OFFSET_COLUMN = "\t";
 		// 出力結果間の余白を設定する
-		public static final String STRING_OFFSET_RESULT = "\t";
+		private static final String STRING_OFFSET_RESULT = "\t";
 		// 区切り線を文字列で設定する
-		public static final String STRING_LINE = "------------------------------------";
+		private static final String STRING_LINE = "------------------------------------";
 		// 処理回数を設定する
-		public static final int TIMES_OPERATION = 1000;
+		private static final int TIMES_OPERATION = 1000;
 	
 
 	/*********************************************************/
@@ -32,7 +32,7 @@ public class E5_7_Operation_Float_Squaring {
 		System.out.println(STRING_LINE);
 		
 		// 設定回数分の処理を行う
-		for (int count = 0; count <= TIMES_OPERATION; count++ ) {
+		for (int count = INITIALIZE_NUMERIC; count <= TIMES_OPERATION; count++ ) {
 			
 			// int型のカウンターをキャストした値を設定する
 			float castValue = count/(float)TIMES_OPERATION;
