@@ -10,23 +10,23 @@ import java.util.Scanner;
 public class E6_5_OutputArrayInitializer {
 
 	// 数値型変数を初期化する変数を初期化する値を設定する
-	public static final int INITIALIZE_INGETGER = 0;
+	private static final int INITIALIZE_INGETGER = 0;
 	// 配列の長さの設定を求めるメッセージを設定する
-	public static final String REQUEST_ARRAY_LENGTH = "配列の長さを設定してください";
+	private static final String REQUEST_ARRAY_LENGTH = "配列の長さを設定してください";
 	// 出力に使う配列の変数名を設定する
-	public static final String TEXT_ARRAY_NAME = "ensyuArray";
+	private static final String TEXT_ARRAY_NAME = "ensyuArray";
 	// 代入演算子を示す文字列を設定する
-	public static final String ASSIGNMENT_OPERATOR = " = ";
+	private static final String ASSIGNMENT_OPERATOR = " = ";
 	// 配列型を示す括弧開きの文字を設定する
-	public static final String OPEN_BRACKET = "[";
+	private static final String OPEN_BRACKET = "[";
 	// 配列型を示す閉じ括弧の文字を設定する
-	public static final String CLOSE_BRACKET = "]";
+	private static final String CLOSE_BRACKET = "]";
 	// 配列初期化子の括弧開きを示す文字を設定する
-	public static final String START_ARRAY_INITIALIZER = "{";
+	private static final String START_ARRAY_INITIALIZER = "{";
 	// 配列初期化子の閉じ括弧を示す文字を設定する
-	public static final String END_ARRAY_INITIALIZER = "}";
+	private static final String END_ARRAY_INITIALIZER = "}";
 	// 初期化子内の区切り文字を示す文字を設定する
-	public static final String DELIMITER = ", ";
+	private static final String DELIMITER = ", ";
 
 
 	/******************************************************/
@@ -37,7 +37,7 @@ public class E6_5_OutputArrayInitializer {
 		// 配列の長さを設定する変数を初期化する
 		int ensyuArrayLength = INITIALIZE_INGETGER;
 		// 配列の設定を行う入力を扱うオブジェクトを作成する
-		Scanner ensyuArrayInput = new Scanner(System.in);
+		Scanner scannerEnsyuArray = new Scanner(System.in);
 		
 		
 		/******************************************************/
@@ -45,7 +45,7 @@ public class E6_5_OutputArrayInitializer {
 		// 配列の長さの設定を求めるメッセージを出力する
 		System.out.println(REQUEST_ARRAY_LENGTH);
 		// 配列の長さの設定を変数に保持する
-		ensyuArrayLength = ensyuArrayInput.nextInt();
+		ensyuArrayLength = scannerEnsyuArray.nextInt();
 		// 配列を設定された長さで作成する
 		int ensyuArray[] = new int[ensyuArrayLength];
 		
@@ -57,7 +57,7 @@ public class E6_5_OutputArrayInitializer {
 			// 各インデックスの値の設定を求める文字列を出力する
 			System.out.println(TEXT_ARRAY_NAME + OPEN_BRACKET + count + CLOSE_BRACKET + ASSIGNMENT_OPERATOR);
 			// 入力された値を各インデックスに保持する
-			ensyuArray[count] = ensyuArrayInput.nextInt();
+			ensyuArray[count] = scannerEnsyuArray.nextInt();
 		}
 
 		// 配列の初期化子を示す文字列の括弧開きまで表示する
@@ -81,7 +81,7 @@ public class E6_5_OutputArrayInitializer {
 		/******************************************************/
 
 		// 配列の設定を行う入力ストリームを閉じる
-		ensyuArrayInput.close();
+		scannerEnsyuArray.close();
 		
 	}
 }
