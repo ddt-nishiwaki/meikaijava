@@ -4,14 +4,14 @@ package kensyu01;
 public class E6_3_OutputArray5DoubleValueFirstDecimal {
 
 	// 数値型変数を初期化するための値を設定する
-	public static final int INITIALIZE_INTEGER = 0;
+	private static final int INITIALIZE_INTEGER = 0;
 	// 配列の長さを設定する
-	public static final int ARRAY_LENGTH = 5;
+	private static final int ARRAY_LENGTH = 5;
 	// 桁を変える値を設定する
-	public static final int VALUE_CHANGE_DIGIT = 10;
+	private static final int VALUE_CHANGE_DIGIT = 10;
 	
 	// 配列の値を出力する際のフォーマットを設定する
-	public static final String FORMAT_OUTPUT_ARRAY = "fiveLengthArray[%d] = %2.1f\n";
+	private static final String FORMAT_OUTPUT_ARRAY = "fiveLengthArray[%d] = %2.1f\n";
 
 	
 	/*************************************************************/
