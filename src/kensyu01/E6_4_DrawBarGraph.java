@@ -12,29 +12,29 @@ import java.util.Scanner;
 public class E6_4_DrawBarGraph {
 	
 	// 数値型変数を初期化する値を設定する
-	public static final int INITIALIZE_INTEGER = 0;
+	private static final int INITIALIZE_INTEGER = 0;
 	// String型変数を初期化する値を設定する
-	public static final String INITIALIZE_STRING = "";
+	private static final String INITIALIZE_STRING = "";
 	// 配列の長さを求めるメッセージを設定する
-	public static final String REQUEST_ARRAY_LENGTH = "配列の長さを設定してください : ";
+	private static final String REQUEST_ARRAY_LENGTH = "配列の長さを設定してください : ";
 	// グラフ描画用の文字を設定する
-	public static final String DRAW_GRAPH = "*";
+	private static final String DRAW_GRAPH = "*";
 	// グラフ内のオフセットに使う文字を設定する
-	public static final String DRAW_OFFSET = " ";
+	private static final String DRAW_OFFSET = " ";
 	// グラフ描画文字のマージンを文字で設定する
-	public static final String DRAW_MARGIN = " ";
+	private static final String DRAW_MARGIN = " ";
 	// 区切り線を描画する文字列を設定する
-	public static final String DRAW_SEPARATOR = "-";
+	private static final String DRAW_SEPARATOR = "-";
 	// 乱数の範囲を設定する
-	public static final int RAMDOME_RANGE = 10;
+	private static final int RAMDOME_RANGE = 10;
 	// 乱数の範囲をシフトする値を設定する
-	public static final int SHIFT_RANGE = 1;
+	private static final int SHIFT_RANGE = 1;
 	// 配列の操作を終了するカウントの値を設定する
-	public static final int END_SEARCH = 0;
+	private static final int END_SEARCH = 0;
 	// グラフ間のマージンの幅を設定する
-	public static final int WIDTH_MARGIN = 2;
+	private static final int WIDTH_MARGIN = 2;
 	// 配列のインデックスの一の位を取得するための値を設定する
-	public static final int GET_A_DIGIT = 10;
+	private static final int GET_A_DIGIT = 10;
 	
 	
 	/********************************************************/
