@@ -31,7 +31,7 @@ public class E6_8_EnhancedForStatement {
 		double avarageArrayValue = INITIALIZE_NUMERIC;
 		
 		// 配列設定の入力を扱うオブジェクトを作成する
-		Scanner arraySettingInput = new Scanner(System.in);
+		Scanner scannerArraySetting = new Scanner(System.in);
 		
 
 		/***********************************************************************/
@@ -39,7 +39,7 @@ public class E6_8_EnhancedForStatement {
 		// 配列の長さを求めるメッセージを出力する
 		System.out.println(REQEST_ARRAY_LENGTH);
 		// 入力された配列の長さを保持する
-		arrayLength = arraySettingInput.nextInt();
+		arrayLength = scannerArraySetting.nextInt();
 		
 		// 配列を作成する
 		double[] doubleArray = new double[arrayLength];
@@ -49,7 +49,7 @@ public class E6_8_EnhancedForStatement {
 			// 値の設定を求めるメッセージを出力する
 			System.out.println(REQUEST_INPUT_DOUBLE);
 			// 入力された値を現在のインデックスに設定する
-			doubleArray[count] = arraySettingInput.nextDouble();
+			doubleArray[count] = scannerArraySetting.nextDouble();
 			
 		}
 		// 配列の各値の合計値を求める
@@ -70,6 +70,6 @@ public class E6_8_EnhancedForStatement {
 		/***********************************************************************/
 
 		// 配列を設定する入力ストリームを閉じる
-		arraySettingInput.close();
+		scannerArraySetting.close();
 	}
 }
