@@ -13,7 +13,7 @@ public class E6_11_ArrayDeleteDuplicate {
 	// 数値型変数を初期化する値を設定する
 	private static final int NUMBER_INITIALIZE_NUMERIC = 0;
 	// 配列の長さを設定する
-	private static final int VALUE_LENGTH_ARRAY = 100;
+	private static final int VALUE_LENGTH_ARRAY = 12;
 	// 乱数の範囲をシフトする値を設定する
 	private static final int NUMBER_SHIFT_RANDOM_RANGE = 1;
 	// 配列の値出力フォーマットを設定する
