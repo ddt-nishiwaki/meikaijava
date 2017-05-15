@@ -15,6 +15,8 @@ public class E6_12_Shuffle_Array {
 	private static final int LENGTH_SHUFFLE_ARRAY = 20;
 	// 配列の最後のインデックスを設定する
 	private static final int DECLIMENT_LAST_INDEX = -1;
+	// 配列がシャッフルされたことを示すメッセージを設定する
+	private static final String MESSAGE_ARRAY_SHUFFLED = "\n\t\t↓　逆順にシャッフルした結果\n\n";
 	
 	
 	/*** メッソド ***********************************/
@@ -88,7 +90,7 @@ public class E6_12_Shuffle_Array {
 		}
 		
 		// 配列の値がシャッフルされたことをテキストで出力する
-		System.out.print("\n\t\t↓　シャッフルした結果\n\n");
+		System.out.print(MESSAGE_ARRAY_SHUFFLED);
 		
 		// 配列の参照をシャッフルしたコピーに変える
 		arrayTargetShuffle = arrayCopyTargetShuffle;
