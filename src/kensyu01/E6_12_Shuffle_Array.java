@@ -68,8 +68,7 @@ public class E6_12_Shuffle_Array {
 			arrayCopyTargetShuffle[ arrayRamdomIndexes[indexCount] ] = arrayTargetShuffle[indexCount];
 		}
 		
-		// 配列をシャッフルしたコピーで上書きする
-		arrayTargetShuffle = arrayCopyTargetShuffle;
+		
 		
 		// 配列の最後のインデックスを設定する
 		int lastIndex = LENGTH_SHUFFLE_ARRAY + DECLIMENT_LAST_INDEX;
@@ -79,6 +78,28 @@ public class E6_12_Shuffle_Array {
 			System.out.print(arrayTargetShuffle[indexCount]);
 			// 最後の処理だけここで処理を終了する
 			if ( indexCount == lastIndex ) {
+				// 改行を出力する
+				System.out.println();
+				// 走査を終了する
+				break;
+			}
+			// 区切り文字を出力する
+			System.out.print(", ");
+		}
+		
+		// 配列の値がシャッフルされたことをテキストで出力する
+		System.out.print("\n\t\t↓　シャッフルした結果\n\n");
+		
+		// 配列の参照をシャッフルしたコピーに変える
+		arrayTargetShuffle = arrayCopyTargetShuffle;
+		
+		// シャッフルされた配列を出力する
+		for ( int indexCount = INITIALIZE_NUMERIC; indexCount < LENGTH_SHUFFLE_ARRAY; indexCount++ ) {
+			// 値を出力する
+			System.out.print(arrayTargetShuffle[indexCount]);
+			// 最後の処理だけここで処理を終了する
+			if ( indexCount == lastIndex ) {
+				// 走査を終了する
 				break;
 			}
 			// 区切り文字を出力する
