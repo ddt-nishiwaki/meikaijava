@@ -13,7 +13,7 @@ public class E6_10_ExclusionSameValueConsective {
 	// 配列の長さの入力を求めるメッセージを設定する
 	private static final String MESSAGE_REQUEST_ARRAY_LENGTH = "配列の長さを設定してください";
 	// 乱数の上限を設定する
-	private static final int NUMBER_LIMIT_RAMDOM_RANGE = 9;
+	private static final int NUMBER_LIMIT_RAMDOM_RANGE = 10;
 	// 乱数の範囲をシフトする値を設定する
 	private static final int NUMBER_SHIFT_RANDOM_RANGE = 1;
 	// 配列の値出力フォーマットを設定する
