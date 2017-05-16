@@ -47,7 +47,7 @@ public class E6_12_Shuffle_Array {
 		for ( int indexCount = INITIALIZE_NUMERIC; indexCount < LENGTH_SHUFFLE_ARRAY; indexCount++ ) {
 			// ランダムなインデックスの値を作成し、保持する
 			randomIndex = generatorRamdomIndex.nextInt(LENGTH_SHUFFLE_ARRAY);
-			// 初回を除き、重複のチェックをおこなう(配列を現在のインデックスまで捜査する)
+			// 初回を除き、重複のチェックをおこなう(配列を現在のインデックスまで走査する)
 			for ( int indexBackNumber = INITIALIZE_NUMERIC; indexBackNumber < indexCount; indexBackNumber++ ) {
 				// 重複が見つかった場合の処理を行う
 				if ( randomIndex == arrayRamdomIndexes[indexBackNumber]) {
@@ -56,7 +56,7 @@ public class E6_12_Shuffle_Array {
 						// ランダムなインデックスの値を作成しなおし、保持する
 						randomIndex = generatorRamdomIndex.nextInt(LENGTH_SHUFFLE_ARRAY);
 					}
-					// 捜査を 0 からやり直す
+					// 走査を 0 からやり直す
 					indexBackNumber = INITIALIZE_NUMERIC;
 				}
 			}
