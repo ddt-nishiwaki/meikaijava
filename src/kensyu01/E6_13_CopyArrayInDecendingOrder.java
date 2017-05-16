@@ -10,7 +10,7 @@ public class E6_13_CopyArrayInDecendingOrder {
 	// 配列の最初のインデックスを設定する
 	private static final int FIRST_INDEX_ARRAY = 0;
 	// 配列の値を出力する際の区切り文字を設定する
-	private static final String SEPALATOR_STRING = ", ";
+	private static final String DELIMITER = ", ";
 	// 配列がコピーされたことをメッセージで出力する
 	private static final String MESSAGE_COPY_ARRAY = "\n\t↓　逆順にコピーした結果\n\n";
 	// 配列を逆順にコピーする処理を行う
@@ -52,7 +52,7 @@ public class E6_13_CopyArrayInDecendingOrder {
 				break;
 			}
 			// 区切り文字を出力する
-			System.out.print(SEPALATOR_STRING);
+			System.out.print(DELIMITER);
 		}
 		
 		
@@ -70,7 +70,7 @@ public class E6_13_CopyArrayInDecendingOrder {
 				break;
 			}
 			// 区切り文字を出力する
-			System.out.print(SEPALATOR_STRING);
+			System.out.print(DELIMITER);
 		}
 			
 	}	
