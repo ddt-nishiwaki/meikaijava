@@ -9,7 +9,7 @@ import java.util.Random;
 
 /*** クラス ************************/
 // 各月の英語の名前を学習するクラス
-public class E6_15_LeaningInglishMonth {
+public class E6_14_LeaningInglishMonth {
 
 	/*** 定数設定 ************************/
 	// 各月に対する正解を設定する
