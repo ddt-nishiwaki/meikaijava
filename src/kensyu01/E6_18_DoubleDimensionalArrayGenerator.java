@@ -9,12 +9,19 @@ import java.util.Scanner;
 public class E6_18_DoubleDimensionalArrayGenerator {
 
 	/*** 定数設定 **************************/
+	// 数値型変数を初期化する値を設定する
 	private static final int INITITIALIZE_NUMBER = 0;
+	// 二次元配列の行、列の設定を求めるフォーマットを設定する
 	private static final String FORMAT_REQUEST_ARRAY_LENGTH = "%sの値を設定してください\n";
+	// 単語「行」を設定する 
 	private static final String WORD_COLUMN = "行";
+	// 単語「列」を設定する 
 	private static final String WORD_ROW = "列";
+	// 二次元配列の値の設定を求めるフォーマットを設定する
 	private static final String FORMAT_REQUEST_ARRAY_VALUE = "%d,%d の値を設定してください";
+	// 設定した二次元配列の値出力のためのフォーマットを設定する
 	private static final String FORMAT_OUTPUT_ARRAY_VALUE = "%d ";
+	// 入力した結果を示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_ARRAY_DETAIL = "\n入力結果　↓ \n";
 
 	/*** メソッド **************************/
