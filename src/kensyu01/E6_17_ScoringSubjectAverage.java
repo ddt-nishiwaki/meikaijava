@@ -84,7 +84,7 @@ public class E6_17_ScoringSubjectAverage {
 			// 科目名を出力する
 			System.out.println(LIST_SUBJECTS[subjectCount] + "の平均値");
 			// 科目ごとの合計点を学生の数で割った平均を出力する
-			System.out.println(valueSubjectSum[subjectCount] / STUDENTS_NUMBER);
+			System.out.println((float)valueSubjectSum[subjectCount] / STUDENTS_NUMBER);
 		}
 
 		/*** 学生ごとの平均点を求める **********************************/
@@ -100,7 +100,7 @@ public class E6_17_ScoringSubjectAverage {
 			// 学生の名前を表示する
 			System.out.println(LIST_STUDENTS[studentID] + "の平均点");
 			// 各学生の平均点を表示する
-			System.out.println(sumScoreStudent/SUBJECT_NUMBER);
+			System.out.println((float)sumScoreStudent/SUBJECT_NUMBER);
 		}
 		
 		/*** 終了処理 *********************************/
