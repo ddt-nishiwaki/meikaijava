@@ -6,19 +6,56 @@ import java.util.Scanner;
 // 入力した値の絶対値を出力するクラス
 public class E3_1_IO_AbsoluteValue {
 
+
+	private static final int INITIALIZE_NUMBER = 0;
+	private static final String MESSAGE_OUTPUT_PROCESS_DETAIL = "入力された値の絶対値を調べます";
+	private static final String MESSAGE_REQUEST_INPUT_INTEGER = "整数値を入力 : ";
+	private static final String FORMAT_OUTPUT_ABSOLUTE_NUMBER = "その絶対値は%dです\n";
+	private static final String MESSAGE_CAUTION_INPUT_INVAILD = "入力が不正です";
+	
+	// 整数値の入力を確実に行うメソッド
+	public static int scanInteger ( Scanner scannerInteger ) {
+		// 入力を保持する変数を初期化する
+		int inputValue = INITIALIZE_NUMBER;
+		// 整数値が入力されるまで繰り返す
+		do {
+			// 入力された値が整数値だった場合の処理を行う
+			if ( scannerInteger.hasNextInt() ) {
+				// 入力された値を保持する
+				inputValue = scannerInteger.nextInt();
+				// ループ処理を終了する
+				break;
+			} else {
+				// 入力が間違えていることを出力する
+				System.out.println(MESSAGE_CAUTION_INPUT_INVAILD);
+				// 整数値の入力を求めるメッセージを出力する
+				System.out.println(MESSAGE_REQUEST_INPUT_INTEGER);
+				// 入力ストリームのトークンを次に移動する
+				scannerInteger.next();
+			}
+		} while ( inputValue == INITIALIZE_NUMBER);
+		
+		return inputValue;
+	}
+	
+	
 	// 入力した値を絶対値で出力する為の処理を行う
 	public static void main (String[] arg){
-		
+		int inputValue = 0;
 		// 入力した値を読み込む為のオブジェクトを作成する
-		Scanner stdIn = new Scanner(System.in);
+		Scanner scannerInteger = new Scanner(System.in);
 		
+		// 処理内容を出力する
+		System.out.println(MESSAGE_OUTPUT_PROCESS_DETAIL);
 		// 整数値の入力を促すメッセージを出力する為の処理する
-		System.out.print("整数値 : ");
-		// 入力された値を変数に保持する
-		int inputValue = stdIn.nextInt();
+		System.out.println(MESSAGE_REQUEST_INPUT_INTEGER);
+		// 入力された値を保持する変数を初期化する	
+		
+		// 整数値を確実に読み込む
+		inputValue = scanInteger(scannerInteger);
 		
 		// 入力用ストリームを閉じる
-		stdIn.close();
+		scannerInteger.close();
 		
 		// 入力された値が0未満の場合 -1 を乗算して絶対値に変換する為の処理を行う
 		if( inputValue < 0 ) {
@@ -28,7 +65,7 @@ public class E3_1_IO_AbsoluteValue {
 		}
 		
 		// 変数inputValueを出力する為の処理を行う
-		System.out.println("その絶対値は" + inputValue + "です。");
+		System.out.printf(FORMAT_OUTPUT_ABSOLUTE_NUMBER, inputValue);
 		
 	}
 		
