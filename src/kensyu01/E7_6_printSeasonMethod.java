@@ -1,4 +1,5 @@
 package kensyu01;
+
 /*** 機能の読み込み ******************************/
 //入力を扱う機能を読み込む
 import java.util.Scanner;
@@ -111,12 +112,14 @@ public class E7_6_printSeasonMethod {
 	/*** メインメソッド ******************************/
 	// 入力した月の季節を出力する処理を行う
 	public static void main (String[] arg) {
+		
 		/*** 変数初期化 ******************************/
 		// 入力された月を保持する変数を初期化する
 		int inputMonth = INITIALIZE_ZERO;
 
 		/*** オブジェクト作成 ******************************/
 		Scanner scannerMonth = new Scanner(System.in);
+		
 		/*** 処理 ******************************/
 		// 処理内容を出力する
 		System.out.println(MESSAGE_OUTPUT_PROCESS_DETAIL);
