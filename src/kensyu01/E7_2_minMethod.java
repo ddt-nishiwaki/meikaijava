@@ -4,14 +4,15 @@ package kensyu01;
 // 入力を扱う機能を読み込む
 import java.util.Scanner;
 
-
 /*** クラス ************************/
 // 3つの値のうちの最小値を求めるメソッドを持つクラス
 public class E7_2_minMethod {
-	/*** 定数設定 ************************/
+	
+	/*** 数値型定数設定 ************************/
 	// 数値型変数を初期化する値を設定する
-	private static final int INITIALIZE_NUMBER = 0;
+	private static final int INITIALIZE_ZERO = 0;
 
+	/*** 文字列型定数設定 ************************/
 	// 処理内容を示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_PROCESS_DETAIL = "入力した数値のうち、最小値を判定します";
 	// 値の入力を求めるメッセージを設定する
@@ -28,12 +29,13 @@ public class E7_2_minMethod {
 
 	/*** 最小値を求めるメソッド ************************/
 	// 3つの値のうちの最小値を求めるメソッド
-	public static int min( int firstValue, int secondValue, int thirdValue ) {
+	private static int min( int firstValue, int secondValue, int thirdValue ) {
+
 		/*** 変数の初期化 ************************/
 		// 最小値を第一引数で初期化する
 		int minimumValue = firstValue;
 
-		/*** 処理 ************************/
+		/*** 演算処理 ************************/
 		// 第二引数が現在の最小値より小さい場合は値を上書きする
 		minimumValue = ( secondValue < minimumValue ) ? secondValue : minimumValue;
 		// 第三引数が現在の最小値より小さい場合は値を上書きする
@@ -47,21 +49,22 @@ public class E7_2_minMethod {
 	/*** メインメソッド ************************/
 	// 3つの値のうちの最小値を求める処理を行う
 	public static void main (String[] arg ) {
+
 		/*** 変数の初期化 ************************/
 		// 一つ目の入力を保持する変数を初期化する
-		int firstValue = INITIALIZE_NUMBER;
+		int firstValue = INITIALIZE_ZERO;
 		// 二つ目の入力を保持する変数を初期化する
-		int secondValue = INITIALIZE_NUMBER;
+		int secondValue = INITIALIZE_ZERO;
 		// 三つ目の入力を保持する変数を初期化する
-		int thirdValue = INITIALIZE_NUMBER;
+		int thirdValue = INITIALIZE_ZERO;
 		// 最小の値を保持する変数を初期化する
-		int resultMinValue = INITIALIZE_NUMBER;
+		int resultMinValue = INITIALIZE_ZERO;
 
 		/*** オブジェクトの作成 ************************/
 		// 引数設定の入力を扱うオブジェクトを作成する
 		Scanner scannerArguments = new Scanner(System.in);
 
-		/*** 処理 ************************/
+		/*** 入力処理 ************************/
 		// 処理内容を出力する
 		System.out.println(MESSAGE_OUTPUT_PROCESS_DETAIL);
 		// 3つの値の入力を求めるメッセージを出力する
@@ -79,8 +82,11 @@ public class E7_2_minMethod {
 		// 三つ目の入力を保持する
 		thirdValue = scannerArguments.nextInt();
 		
+		/*** 演算処理 ************************/
 		// 入力された値のうちの最小値を求める
 		resultMinValue = min(firstValue, secondValue, thirdValue);
+
+		/*** 出力処理 ************************/
 		// 求めた最小値を出力する
 		System.out.printf(FORMAT_OUTPUT_MIN_NUMBER, resultMinValue);
 		
