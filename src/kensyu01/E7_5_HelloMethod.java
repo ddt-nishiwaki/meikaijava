@@ -11,10 +11,11 @@ public class E7_5_HelloMethod {
 	private static final String GREETING_MESSAGE = "こんにちは。";
 
 
-	/*** メソッド名 ******************************/
+	/*** メソッド ******************************/
 	// 入力された挨拶を出力するメソッド
-	public static void outputHello ( String greeting ) {
-		/*** 処理 ******************************/
+	private static void outputHello ( String greeting ) {
+
+		/*** 出力処理 ******************************/
 		// 受け取った挨拶を出力する
 		System.out.println(greeting);
 	}
@@ -22,10 +23,13 @@ public class E7_5_HelloMethod {
 
 	/*** メインメソッド ******************************/
 	public static void main (String[] arg) {
-		/*** 処理 ******************************/
+
+		/*** 内容説明処理 ******************************/
 		// 処理内容を出力する
 		System.out.println(MESSAGE_OUTPUT_PROCESS_DETAIL);
+
+		/*** 出力処理 ******************************/
 		// 挨拶を出力する
-		System.out.println(GREETING_MESSAGE);
+		outputHello(GREETING_MESSAGE);
 	}
 }
