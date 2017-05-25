@@ -11,14 +11,20 @@ public class E6_18_DoubleDimensionalArrayGenerator {
 	/*** 定数設定 **************************/
 	// 数値型変数を初期化する値を設定する
 	private static final int INITITIALIZE_NUMBER = 0;
-	// 二次元配列の行、列の設定を求めるフォーマットを設定する
-	private static final String FORMAT_REQUEST_ARRAY_LENGTH = "%sの値を設定してください\n";
+	// 行のカウントを出力する際の値を調整する数を設定する
+	private static final int NUMBER_FORMATING_OUTPUT_COUNT = 1;
+	// 二次元配列の行の設定を求めるフォーマットを設定する
+	private static final String FORMAT_REQUEST_COLUMN_LENGTH = "%sの長さを設定してください : \n";
+	// 二次元配列の各列の設定を求めるメッセージを設定する
+	private static final String FORMAT_REQUEST_ROWS_LENGTH = "各%sの長さを設定してください\n";
+	// 二次元配列の行、各行の設定を求めるフォーマットを設定する
+	private static final String FORMAT_REQUEST_ROW_LENGTH = "%d%s目の%sの長さを設定してください : \n";
 	// 単語「行」を設定する 
 	private static final String WORD_COLUMN = "行";
 	// 単語「列」を設定する 
 	private static final String WORD_ROW = "列";
 	// 二次元配列の値の設定を求めるフォーマットを設定する
-	private static final String FORMAT_REQUEST_ARRAY_VALUE = "%d,%d の値を設定してください";
+	private static final String FORMAT_REQUEST_ARRAY_VALUE = "[%d][%d] の値を設定してください";
 	// 設定した二次元配列の値出力のためのフォーマットを設定する
 	private static final String FORMAT_OUTPUT_ARRAY_VALUE = "%d ";
 	// 入力した結果を示すメッセージを設定する
@@ -41,7 +47,7 @@ public class E6_18_DoubleDimensionalArrayGenerator {
 
 		/*** 二次元配列の作成 **************************/
 		// 二次元配列の行数入力を求めるメッセージを出力する
-		System.out.printf(FORMAT_REQUEST_ARRAY_LENGTH,WORD_COLUMN);
+		System.out.printf(FORMAT_REQUEST_COLUMN_LENGTH,WORD_COLUMN);
 		// 入力された行数を保持する
 		lengthArrayRow = scannerArraySetting.nextInt();
 		// 二次元配列を作成する　doubledimensional array
@@ -49,10 +55,13 @@ public class E6_18_DoubleDimensionalArrayGenerator {
 		
 		
 		/*** 二次元配列に値を設定する **************************/
+		// 各行の列数入力を求めるメッセージを出力する
+		System.out.printf(FORMAT_REQUEST_ROWS_LENGTH,WORD_ROW);
 		// 各行にアクセスする
 		for ( int rowCount = INITITIALIZE_NUMBER; rowCount < lengthArrayRow; rowCount++) {
+		
 			// 二次元配列の列数入力を求めるメッセージを出力する
-			System.out.printf(FORMAT_REQUEST_ARRAY_LENGTH,WORD_ROW);
+			System.out.printf(FORMAT_REQUEST_ROW_LENGTH,rowCount + NUMBER_FORMATING_OUTPUT_COUNT,WORD_COLUMN,WORD_ROW);
 			// 入力された列数を保持する
 			lengthArrayColumn = scannerArraySetting.nextInt();
 			// 各行に列を設定する
