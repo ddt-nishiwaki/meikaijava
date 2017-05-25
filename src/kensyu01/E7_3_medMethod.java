@@ -39,8 +39,8 @@ public class E7_3_medMethod {
 		/*** 演算処理 ***********************************/
 		// 一つ目の値と二つ目の値のうち、小さくない方の値を保持する
 		medianValue = ( firstValue >= secondValue ) ? firstValue : secondValue;
-		// 保持した値と三つ目の値のを比べて、大きくない方の値を保持する
-		medianValue = ( medianValue >= thirdValue ) ? thirdValue : medianValue;
+		// 中央値となる値を変数に保持する
+		medianValue = ( firstValue != secondValue && medianValue >= thirdValue ) ? thirdValue : medianValue;
 		
 		/*** 終了処理 ***********************************/
 		// 中央値を返す
