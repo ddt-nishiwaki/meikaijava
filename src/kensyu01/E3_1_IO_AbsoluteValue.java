@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class E3_1_IO_AbsoluteValue {
 
 	// 数値型変数を初期化する値を設定する
-	private static final int INITIALIZE_NUMBER = 0;
+	private static final int INITIALIZE_ZERO = 0;
 	// 処理内容を示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_PROCESS_DETAIL = "入力された値の絶対値を調べます";
 	// 整数値の入力を求めるメッセージを設定する
@@ -19,9 +19,17 @@ public class E3_1_IO_AbsoluteValue {
 	
 
 	// 整数値の入力を確実に行うメソッド
-	public static int scanInteger ( Scanner scannerInteger ) {
+	private static int scanInteger () {
+
+		/*** オブジェクトの作成 ******************************/
+		// 整数値入力を扱うオブジェクトを作成する
+		Scanner scannerInteger = new Scanner(System.in);
+
+		/*** 変数の初期化 ******************************/
 		// 入力を保持する変数を初期化する
-		int inputValue = INITIALIZE_NUMBER;
+		int inputValue = INITIALIZE_ZERO;
+
+		/*** 入力処理 ******************************/
 		// 整数値が入力されるまで繰り返す
 		do {
 			// 入力された値が整数値だった場合の処理を行う
@@ -40,8 +48,11 @@ public class E3_1_IO_AbsoluteValue {
 				scannerInteger.next();
 			}
 		// 整数値が設定されるまで繰り返す
-		} while ( inputValue == INITIALIZE_NUMBER);
+		} while ( inputValue == INITIALIZE_ZERO);
 		
+		/*** 終了処理 ******************************/
+		// 整数値入力用ストリームを閉じる
+		scannerInteger.close();
 		// 設定された整数値を返す
 		return inputValue;
 	}
@@ -50,7 +61,7 @@ public class E3_1_IO_AbsoluteValue {
 	// 入力した値を絶対値で出力する為の処理を行う
 	public static void main (String[] arg){
 		// 読み込んだ整数値を保持する変数を初期化する
-		int inputValue = INITIALIZE_NUMBER;
+		int inputValue = INITIALIZE_ZERO;
 		// 入力した値を読み込む為のオブジェクトを作成する
 		Scanner scannerInteger = new Scanner(System.in);
 		
@@ -60,7 +71,7 @@ public class E3_1_IO_AbsoluteValue {
 		System.out.println(MESSAGE_REQUEST_INPUT_INTEGER);
 		
 		// 整数値を確実に読み込む
-		inputValue = scanInteger(scannerInteger);
+		inputValue = scanInteger();
 		
 		
 		// 入力された値が0未満の場合 -1 を乗算して絶対値に変換する為の処理を行う
