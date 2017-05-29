@@ -184,33 +184,37 @@ public class E7_14_ControlTargetBitAreas {
 		System.out.println(MESSAGE_REQUEST_LENGTH_RANGE);
 		// 入力されたbit範囲の開始位置を保持する
 		numberLengthTargetRange = scannerTargetBitRange.nextInt();
-
-		/*** 演算処理 ******************************/
-		// setメソッドの返値を保持する変数を初期化する
-		resultNumberSet = set(convertedInteger, numberTargetStartRange, numberLengthTargetRange);
-		// resetメソッドの返値を保持する変数を初期化する
-		resultNumberReset = reset(convertedInteger, numberTargetStartRange, numberLengthTargetRange);
-		// inverseメソッドの返値を保持する変数を初期化する
-		resultNumberInverse = inverse(convertedInteger, numberTargetStartRange, numberLengthTargetRange);
 		
-		/*** setメソッドの結果出力 ******************************/
-		// 指定したビットを1にして値を出力することをメッセージで出力する
-		System.out.println(MESSAGE_OUTPUT_CHANGE_ONE);
-		// 指定したビットを1にして値を出力する
-		System.out.printf(FORMAT_OUTPUT_CHANGE_RESULT, printBits(resultNumberSet), resultNumberSet);
+		
+		/*** 入力判定 ******************************/
+		// 指定したビット範囲が32ビットの範囲内なら実行する
+		if (numberTargetStartRange + numberLengthTargetRange <= LENGTH_INTEGER_BIT) {
+			/*** 演算処理 ******************************/
+			// setメソッドの返値を保持する変数を初期化する
+			resultNumberSet = set(convertedInteger, numberTargetStartRange, numberLengthTargetRange);
+			// resetメソッドの返値を保持する変数を初期化する
+			resultNumberReset = reset(convertedInteger, numberTargetStartRange, numberLengthTargetRange);
+			// inverseメソッドの返値を保持する変数を初期化する
+			resultNumberInverse = inverse(convertedInteger, numberTargetStartRange, numberLengthTargetRange);
+			
+			/*** setメソッドの結果出力 ******************************/
+			// 指定したビットを1にして値を出力することをメッセージで出力する
+			System.out.println(MESSAGE_OUTPUT_CHANGE_ONE);
+			// 指定したビットを1にして値を出力する
+			System.out.printf(FORMAT_OUTPUT_CHANGE_RESULT, printBits(resultNumberSet), resultNumberSet);
 
-		/*** resetメソッドの結果出力 ******************************/
-		// 指定したビットを0にして値を出力することをメッセージで出力する
-		System.out.println(MESSAGE_OUTPUT_CHANGE_ZERO);
-		// 指定したビットを0にして値を出力する
-		System.out.printf(FORMAT_OUTPUT_CHANGE_RESULT, printBits(resultNumberReset), resultNumberReset);
+			/*** resetメソッドの結果出力 ******************************/
+			// 指定したビットを0にして値を出力することをメッセージで出力する
+			System.out.println(MESSAGE_OUTPUT_CHANGE_ZERO);
+			// 指定したビットを0にして値を出力する
+			System.out.printf(FORMAT_OUTPUT_CHANGE_RESULT, printBits(resultNumberReset), resultNumberReset);
 
-		/*** inverseメソッドの結果出力 ******************************/
-		// 指定したビットを反転した値を出力することをメッセージで出力する
-		System.out.println(MESSAGE_OUTPUT_CHANGE_REVERSE);
-		// 指定したビットを反転した値を出力する
-		System.out.printf(FORMAT_OUTPUT_CHANGE_RESULT, printBits(resultNumberInverse), resultNumberInverse);
-
+			/*** inverseメソッドの結果出力 ******************************/
+			// 指定したビットを反転した値を出力することをメッセージで出力する
+			System.out.println(MESSAGE_OUTPUT_CHANGE_REVERSE);
+			// 指定したビットを反転した値を出力する
+			System.out.printf(FORMAT_OUTPUT_CHANGE_RESULT, printBits(resultNumberInverse), resultNumberInverse);
+		};
 		/*** 終了処理 ******************************/
 		// bitの変換対象範囲の入力ストリームを閉じる
 		scannerTargetBitRange.close();
