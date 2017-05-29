@@ -28,8 +28,7 @@ public class E7_10_ExtendedMentalArithmetic {
 	private static final int NUMBER_FOURTH_QUESTION_TYPE = 3;
 	// もう一度回答を行うための値を設定する
 	private static final int NUMBER_RETRY_QUESTION = 1;
-	// 回答を終了するための値を設定する
-	private static final int NUMBER_END_QUESTION = 0;
+
 	
 
 	/*** 文字列型定数設定 ******************************/
@@ -37,10 +36,10 @@ public class E7_10_ExtendedMentalArithmetic {
 	private static final String MESSAGE_OUTPUT_PROCESS_DETAIL = "暗算力トレーニングを開始します";
 	// 計算式の答えの入力を求めるメッセージを設定する
 	private static final String[] FORMAT_LIST_QUESTION_TYPES = {
-		"x + y + z = ",
-		"x + y - z = ",
-		"x - y + z = ",
-		"x - y - z = "
+		"%d + %d + %d = ",
+		"%d + %d - %d = ",
+		"%d - %d + %d = ",
+		"%d - %d - %d = "
 	};
 	// 答えが正解していることを示すメッセージを設定する
 	private static final String MESSAGE_ANSWER = "正解です";
@@ -48,6 +47,8 @@ public class E7_10_ExtendedMentalArithmetic {
 	private static final String MESSAGE_WRONG_ANSWER = "答えが間違っています";
 	// リプレイをするかどうかを尋ねるメッセージを設定する
 	private static final String MESSAGE_RETRY_QUESTION = "もう一度？< yes...1 / no...0 > : ";
+	// 出題が週力したことを示すメッセージを出力する
+	private static final String MESSAGE_END_QUESTION = "出題を終了します";
 
 
 	/*** オブジェクト作成 ******************************/
@@ -55,20 +56,7 @@ public class E7_10_ExtendedMentalArithmetic {
 	private static final Scanner scannerQuestionAnswer = new Scanner(System.in);
 	// 回答を続けるかどうかのコマンド入力を扱うオブジェクトを作成する
 	private static final Scanner scannerUserCommand = new Scanner(System.in);
-	
-	
-	
-	/*** メソッド ******************************/
-	// 計算問題を出題するメソッドを設定する
-//	private static void makeOperateQuestion () {
-//		/*** 変数初期化 ******************************/
-//		/*** オブジェクト作成 ******************************/
-//		/*** 内容出力処理 ******************************/
-//		/*** 入力処理 ******************************/
-//		/*** 出力処理 ******************************/
-//		/*** 終了処理 ******************************/
-//	};
-	
+
 
 	/*** メインメソッド ******************************/
 	// 計算問題を出題するメソッドを実行する
@@ -84,9 +72,9 @@ public class E7_10_ExtendedMentalArithmetic {
 		
 		/*** オブジェクト作成 ******************************/
 		// 3桁の乱数を生成するためのオブジェクトを作成する
-		Random generateOperand = new Ramdom();
+		Random generateOperand = new Random();
 		// 設問タイプを決定するための乱数を生成するオブジェクトを作成する
-		Random generateQuestionType = new Ramdom();
+		Random generateQuestionType = new Random();
 
 
 		/*** 内容出力処理 ******************************/
@@ -103,7 +91,7 @@ public class E7_10_ExtendedMentalArithmetic {
 			// 三つ目の演算対象を設定する
 			int thirdOperand = generateOperand.nextInt(NUMBER_SET_RANDOM_RANGE) + NUMBER_FORMATING_RANDOM_RANGE;
 			// 出題形式を決定する
-			int numberQuestionType = generateOperand.nextInt(NUMBER_QUESTION_TYPES);
+			int numberQuestionType = generateQuestionType.nextInt(NUMBER_QUESTION_TYPES);
 
 			// 出題形式に応じて正解を振り分ける
 			switch (numberQuestionType) {
@@ -111,25 +99,19 @@ public class E7_10_ExtendedMentalArithmetic {
 			case NUMBER_FIRST_QUESTION_TYPE :
 					// 出題形式に応じた回答を設定し保持する
 					answer = firstOperand + secondOperand + thirdOperand;
-					// 出題形式に応じた設問を出力する
-					System.out.print(FORMAT_LIST_QUESTION_TYPES[NUMBER_FIRST_QUESTION_TYPE]);
 					// スイッチ文を終了する
 					break;
 			// 二つ目の出題形式の場合
 			case NUMBER_SECOND_QUESTION_TYPE :
 					// 出題形式に応じた回答を設定し保持する
-					answer = firstOperand - secondOperand + thirdOperand;
-					// 出題形式に応じた設問を出力する
-					System.out.print(FORMAT_LIST_QUESTION_TYPES[NUMBER_SECOND_QUESTION_TYPE]);
+					answer = firstOperand + secondOperand - thirdOperand;
 					// スイッチ文を終了する
 					break;
 			// 三つ目の出題形式の場合
 			case NUMBER_THIRD_QUESTION_TYPE :
 					// 出題形式に応じた回答を設定し保持する
-					answer = firstOperand + secondOperand - thirdOperand;
+					answer = firstOperand - secondOperand + thirdOperand;
 					// 出題形式に応じた設問を出力する
-					System.out.print(FORMAT_LIST_QUESTION_TYPES[NUMBER_THIRD_QUESTION_TYPE]);
-					// スイッチ文を終了する
 					break;
 			// 四つ目の出題形式の場合
 			case NUMBER_FOURTH_QUESTION_TYPE :
@@ -142,7 +124,7 @@ public class E7_10_ExtendedMentalArithmetic {
 			// 正解するまで処理を繰り返す
 			do {
 				// 出題形式に応じた設問を出力し、回答を求める
-				System.out.print(FORMAT_LIST_QUESTION_TYPES[numberQuestionType]);
+				System.out.printf(FORMAT_LIST_QUESTION_TYPES[numberQuestionType],firstOperand,secondOperand,thirdOperand);
 				// 入力された回答を保持する
 				inputAnswer = scannerQuestionAnswer.nextInt();
 				// 正解した場合の処理を行う
@@ -152,6 +134,7 @@ public class E7_10_ExtendedMentalArithmetic {
 				}
 				// 不正解であることを出力する
 				System.out.println(MESSAGE_WRONG_ANSWER);
+			// 正解でない場合は繰り返す
 			} while ( inputAnswer != answer );
 			// 正解であることを出力する
 			System.out.println(MESSAGE_ANSWER);
@@ -159,9 +142,11 @@ public class E7_10_ExtendedMentalArithmetic {
 			System.out.println(MESSAGE_RETRY_QUESTION);
 			// 入力されたコマンドを保持する
 			retryCommand = scannerUserCommand.nextInt();
-
 		// リトライコマンドが入力された場合は繰り返し処理を抜ける
 		} while ( retryCommand == NUMBER_RETRY_QUESTION );
+		
+		// 終了したことをメッセージで出力する
+		System.out.println(MESSAGE_END_QUESTION);
 		/*** 終了処理 ******************************/
 		// 回答入力用ストリームを閉じる
 		scannerQuestionAnswer.close();
