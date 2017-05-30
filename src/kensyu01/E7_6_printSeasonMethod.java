@@ -23,6 +23,11 @@ public class E7_6_printSeasonMethod {
 	private static final int SEPTEMBER = 9;
 	// 秋の終わり月を設定する
 	private static final int NOVEMBER = 11;
+	// 数の一番小さい月を設定する
+	private static final int MINIMUM_MONTH = 1;
+	// 数の一番大きい月を設定する
+	private static final int MAX_MONTH = 12;
+	
 
 
 	/*** 文字列型定数設定 ******************************/
@@ -51,12 +56,8 @@ public class E7_6_printSeasonMethod {
 	private static void pringSeason (int month){
 
 		/*** 出力処理 ******************************/
-		// 引数が1 ~ 12 以外の値の場合の処理を行う
-		if ( month < 1 || month > 12 ) {
-			// 何もせず終了する
-			return;
 		// 引数が3 ~ 5 の場合の処理を行う
-		} else if ( month >= MARCH && month <= MAY ) {
+		if ( month >= MARCH && month <= MAY ) {
 			// 春であることをメッセージで出力する
 			System.out.printf(FORMAT_OUTPUT_JADGE_SEASON, WORD_SPRING);
 		// 引数が6 ~ 8 の場合の処理を行う
@@ -67,10 +68,14 @@ public class E7_6_printSeasonMethod {
 		} else if ( month >= SEPTEMBER && month <= NOVEMBER ) {
 			// 秋であることをメッセージで出力する
 			System.out.printf(FORMAT_OUTPUT_JADGE_SEASON, WORD_AUTUMN);
-		// その他（引数が12, 1, 2）の場合の処理を行う
-		} else {
+		// 引数が12, 1, 2の場合の処理を行う
+		} else if ( month >= MINIMUM_MONTH || month <= MAX_MONTH) {
 			// 冬であることをメッセージで出力する
 			System.out.printf(FORMAT_OUTPUT_JADGE_SEASON, WORD_WINTER);
+		// いずれにも当てはまらない場合の処理を行う
+		} else {
+			// 何もせず終了する
+			return;
 		}
 	}
 	
