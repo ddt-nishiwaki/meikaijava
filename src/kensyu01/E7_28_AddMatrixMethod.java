@@ -3,7 +3,11 @@ package kensyu01;
 /*** クラス ******************************/
 // 2つの行列の和を求めるメソッドを実行するクラス
 public class E7_28_AddMatrixMethod {
-
+	
+	/*** 数値型定数設定 ******************************/
+	// 配列の最初のインデックスとなる値を設定する
+	private static final int FIRST_INDEX = 0;
+	
 	/*** 文字列型定数設定 ******************************/
 	// 処理内容を示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_PROCESS_DETAIL = "2つの行列の和を求めます";
@@ -24,14 +28,14 @@ public class E7_28_AddMatrixMethod {
 		// 同じ行数の行数の行列を設定する
 		int[][] matrixAddRusult = new int[lengthFirstMatrixRow][];
 		// 行列の各行にアクセスする
-		for (int rowCount = 0; rowCount < lengthFirstMatrixRow; rowCount++){
+		for (int rowCount = FIRST_INDEX; rowCount < lengthFirstMatrixRow; rowCount++){
 			// 一つ目の行列の列の数を取得する
 			int lengthFirstMatrixColumn = firstMatrix[rowCount].length;
 			// 加算結果保持用の行列に列数を設定する
 			matrixAddRusult[rowCount] = new int[lengthFirstMatrixColumn];
 
 			// 行列の各行にアクセスする
-			for (int columnCount = 0; columnCount < lengthFirstMatrixColumn; columnCount++){
+			for (int columnCount = FIRST_INDEX; columnCount < lengthFirstMatrixColumn; columnCount++){
 				// 引数に指定した行列の成分の値を加算した結果を保持する
 				matrixAddRusult[rowCount][columnCount] = firstMatrix[rowCount][columnCount] + secondMatrix[rowCount][columnCount];
 			}
@@ -46,11 +50,11 @@ public class E7_28_AddMatrixMethod {
 		// 一つ目の行列の行の数を取得する
 		int lengthTargetMatrixRow = targetMatrix.length;
 		// 行列の各行にアクセスする
-		for (int rowCount = 0; rowCount < lengthTargetMatrixRow; rowCount++){
+		for (int rowCount = FIRST_INDEX; rowCount < lengthTargetMatrixRow; rowCount++){
 			// 一つ目の行列の列の数を取得する
 			int lengthTargetMatrixColumn = targetMatrix[rowCount].length;
 			// 各行の列にアクセスする
-			for (int columnCount = 0; columnCount < lengthTargetMatrixColumn; columnCount++){
+			for (int columnCount = FIRST_INDEX; columnCount < lengthTargetMatrixColumn; columnCount++){
 				// 各成分を出力する
 				System.out.printf(FORMAT_OUTPUT_MATRIX_ELEMENT,targetMatrix[rowCount][columnCount]);
 			}

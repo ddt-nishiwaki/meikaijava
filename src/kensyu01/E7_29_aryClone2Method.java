@@ -4,8 +4,6 @@ package kensyu01;
 public class E7_29_aryClone2Method {
 	
 	/*** 数値型定数設定 ******************************/
-	// 整数値を初期化するための 0 を設定する
-	private static final int INITIALIZE_ZERO = 0;
 	// 配列の最初のインデックスとなる値を設定する
 	private static final int FIRST_INDEX = 0;
 
@@ -45,13 +43,13 @@ public class E7_29_aryClone2Method {
 		// 一次元目が同じ長さの二次元配列を設定する
 		int[][] cloneTwoDimentinalArray = new int[lengthOneDemention][];
 		// 一次元目の各要素へアクセスする
-		for ( int primaryCount = INITIALIZE_ZERO; primaryCount < lengthOneDemention; primaryCount++ ){
+		for ( int primaryCount = FIRST_INDEX; primaryCount < lengthOneDemention; primaryCount++ ){
 			// 二次元目の各配列の長さを取得する
 			int lengthTwoDimention = originMatrix[primaryCount].length;
 			// 複製中の二次元配列の二次元目の長さを設定する
 			cloneTwoDimentinalArray[primaryCount] = new int[lengthTwoDimention];
 			// 各要素へアクセスする
-			for ( int secondaryCount = INITIALIZE_ZERO; secondaryCount < lengthTwoDimention; secondaryCount++ ){
+			for ( int secondaryCount = FIRST_INDEX; secondaryCount < lengthTwoDimention; secondaryCount++ ){
 				// 各要素の値をコピーする
 				cloneTwoDimentinalArray[primaryCount][secondaryCount] = originMatrix[primaryCount][secondaryCount];
 			}

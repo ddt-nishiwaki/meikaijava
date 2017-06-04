@@ -6,7 +6,11 @@ package kensyu01;
  *  異なればfalse同じであれば加算してtrueを返すメソッドを実行するクラス
  */
 public class E7_27_AddMatrixMethod {
-
+	
+	/*** 数値型定数設定 ******************************/
+	// 配列の最初のインデックスとなる値を設定する
+	private static final int FIRST_INDEX = 0;
+	
 	/*** 文字列型定数設定 ******************************/
 	// 処理内容を示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_PROCESS_DETAIL = "行列の行数、列数が同じかどうか判定し、\n異なればfalse同じであれば加算してtrueを返すメソッドを実行する";
@@ -45,7 +49,7 @@ public class E7_27_AddMatrixMethod {
 		// 3つの行列の行数が同じ場合の処理を行う
 		if(lengthFirstMatrixRow == lengthSecondMatrixRow && lengthFirstMatrixRow == lengthThirdMatrixRow){
 			// 行列の各行にアクセスする
-			for (int rowCount = 0; rowCount < lengthFirstMatrixRow; rowCount++){
+			for (int rowCount = FIRST_INDEX; rowCount < lengthFirstMatrixRow; rowCount++){
 				// 一つ目の行列の列の数を取得する
 				int lengthFirstMatrixColumn = firstMatrix[rowCount].length;
 				// 一つ目の行列の列の数を取得する
@@ -56,7 +60,7 @@ public class E7_27_AddMatrixMethod {
 				// 各列の長さが同じ場合の処理を行う
 				if (lengthFirstMatrixColumn == lengthSecondMatrixColumn && lengthFirstMatrixColumn == lengthThirdMatrixColumn){
 					// 行列の各行にアクセスする
-					for (int columnCount = 0; columnCount < lengthFirstMatrixColumn; columnCount++){
+					for (int columnCount = FIRST_INDEX; columnCount < lengthFirstMatrixColumn; columnCount++){
 						// 3つめの行列に 一つ目の行列と2つ目の行列の和を設定する
 						thirdMatrix[rowCount][columnCount] = firstMatrix[rowCount][columnCount] + secondMatrix[rowCount][columnCount];
 					}
@@ -83,11 +87,11 @@ public class E7_27_AddMatrixMethod {
 		// 一つ目の行列の行の数を取得する
 		int lengthTargetMatrixRow = targetMatrix.length;
 		// 行列の各行にアクセスする
-		for (int rowCount = 0; rowCount < lengthTargetMatrixRow; rowCount++){
+		for (int rowCount = FIRST_INDEX; rowCount < lengthTargetMatrixRow; rowCount++){
 			// 一つ目の行列の列の数を取得する
 			int lengthTargetMatrixColumn = targetMatrix[rowCount].length;
 			// 各行の列にアクセスする
-			for (int columnCount = 0; columnCount < lengthTargetMatrixColumn; columnCount++){
+			for (int columnCount = FIRST_INDEX; columnCount < lengthTargetMatrixColumn; columnCount++){
 				// 各成分を出力する
 				System.out.printf(FORMAT_OUTPUT_MATRIX_ELEMENT,targetMatrix[rowCount][columnCount]);
 			}
