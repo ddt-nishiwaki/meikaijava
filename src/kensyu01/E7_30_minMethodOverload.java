@@ -4,7 +4,6 @@ package kensyu01;
 //乱数を生成する機能を読み込む
 import java.util.Random;
 
-
 /*** クラス ******************************/
 // 二つの整数値、三つの整数値、配列要素のいずれからも最小値を求めるメソッドを実行するクラス
 public class E7_30_minMethodOverload {
@@ -33,7 +32,7 @@ public class E7_30_minMethodOverload {
 	// 二つの整数値のうち小さい方を出力することを示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_MIN_TWO = "次の二つの整数値のうち小さい方を出力します";
 	// 三つの整数値のうち小さい方を出力することを示すメッセージを設定する
-	private static final String MESSAGE_OUTPUT_MIN_THREE = "三つの整数値のうち小さい方を出力します";
+	private static final String MESSAGE_OUTPUT_MIN_THREE = "三つの整数値のうちから最小値を出力します";
 	// 配列要素のうち最小の値を出力することを示すメッセージを設定する
 	private static final String MESSAGE_OUTPUT_MIN_ELEMENT = "配列要素のうちから最小値を出力します";
 	// 設定する値を示すフォーマットを設定する
