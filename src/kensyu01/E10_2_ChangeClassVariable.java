@@ -12,9 +12,9 @@ public class E10_2_ChangeClassVariable {
 	// 三つ目のインスタンスの識別ID確認用の出力フォーマットを作成する
 	private static final String FORMAT_OUTPUT_THIRD_ID = "thirdInstanceの識別ID : %d\n";
 	// 四つ目のインスタンスの識別ID確認用の出力フォーマットを作成する
-	private static final String FORMAT_OUTPUT_FOURTH_ID = "thirdInstanceの識別ID : %d\n";
+	private static final String FORMAT_OUTPUT_FOURTH_ID = "fourceInstanceの識別ID : %d\n";
 	// IDクラスのクラス変数の変化を確認するための出力フォーマットを作成する
-	private static final String FORMAT_OUTPUT_INSTANCE_COUNT = "現在までに %dつ のインスタンスが作成されています。\n";
+	private static final String FORMAT_OUTPUT_INSTANCE_COUNT = "現在の最大識別IDは %d です。\n";
 
 	/*** メインメソッド ************************/
 	// IDクラスのインスタンスを作成し、インスタンス作成回数を確認する処理を行う
@@ -51,7 +51,7 @@ public class E10_2_ChangeClassVariable {
 		
 		/*** クラス変数の変化を確認 ********/
 		// 現在までに作成したインスタンスの数を取得する
-		int instanceCount = Id.getMaxId();
+		int instanceCount = ExId.getMaxId();
 		// 現在までに作成したインスタンスの数を出力する
 		System.out.printf(FORMAT_OUTPUT_INSTANCE_COUNT, instanceCount);
 	}
