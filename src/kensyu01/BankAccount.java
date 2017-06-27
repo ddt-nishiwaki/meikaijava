@@ -51,22 +51,22 @@ public class BankAccount {
 	
 	/*** ゲッター ********************/
 	// 名義の名前を取得するメソッドを設定する
-	String getName(){
+	String mGetName(){
 		// 名義の名前を返す
 		return this.mName;
 	}
 	// 口座番号を取得するメソッドを設定する
-	String getNo(){
+	String mGetNo(){
 		// 口座番号を返す
 		return this.mAccountNumber;
 	}
 	// 残高を取得するメソッドを設定する
-	long getBalance(){
+	long mGetBalance(){
 		// 残高を返す
 		return this.mBalance;
 	}
 	// 口座開設日を取得するメソッドを設定する
-	Day getOpeningDate(){
+	Day mGetOpeningDate(){
 		// 口座開設日を返す
 		return new Day(this.mOpeningDate);
 	}
@@ -79,12 +79,12 @@ public class BankAccount {
 	}
 	/*** セッター ********************/
 	// 入金を行うメソッドを設定する
-	void deposit(long cash){
+	void mDeposit(long cash){
 		// 設定した金額を加算する
 		mBalance += cash;
 	}
 	// 引き出しを行うメソッドを設定する
-	void withdraw(long cash){
+	void mWithdraw(long cash){
 		// 設定した金額を減算する
 		mBalance -= cash;
 	}
