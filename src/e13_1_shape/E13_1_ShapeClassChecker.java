@@ -164,9 +164,5 @@ public class E13_1_ShapeClassChecker {
 			// 入力されたコマンドに応じた図形を出力する
 			sControlDrawProcess();
 		}
-		
-		AbstractShape righttriangle = new RightTriangleUpperLeft(4);
-		righttriangle.print();
-		
 	}
 }
