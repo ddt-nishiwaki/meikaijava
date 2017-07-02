@@ -1,5 +1,6 @@
 package e13_1_shape;
 
+
 /*************************************************
 	インポート
 *************************************************/
@@ -9,59 +10,53 @@ import static e13_1_shape.CommonShapeConstants.*;
 /*************************************************
 	クラス
 *************************************************/
-public class Rectangle extends AbstractShape{
+/*
+ * 左下が直角の三角形を描画するクラス
+ */
+public class RightTriangleLowerLeft extends AbstractRightTriangle {
 
 	/*************************************************
 		定数(文字列)
 	*************************************************/
 	// 描画する図形を示す文字列を設定する
-	public static final String TEXT_SHAPE_RECTANGLE = "Rectangle";
-	// toStringの返値フォーマットを設定する
-	public static final String FORMAT_OUTPUT_TO_STRING = "%s(width: %d, height: %d)";
-
-	/*************************************************
-		インスタンス変数
-	*************************************************/
-	// 幅フィールドを設定する
-	private int mWidth;			
-	// 高さフィールドを設定する
-	private int mHeight;
+	public static final String TEXT_SHAPE_RIGHT_TRIANGLE = "RightTriangle";
+	
 	
 	/*************************************************
 		コンストラクタ
 	*************************************************/
-	// 幅高さを設定するコンストラクタを設定する
-	public Rectangle(int width, int height){
-		// 幅を設定する
-		mWidth = width;
-		// 高さを設定する
-		mHeight = height;
+	// 何もしないコンストラクタを設定する
+	public RightTriangleLowerLeft(){
+		super();
 	}
-	
+	// 幅高さを設定するコンストラクタを設定する
+	public RightTriangleLowerLeft(int width){
+		super(width);
+	}
+
 	/*************************************************
 		オーバーライド
 	*************************************************/
 	/*
 	 * 描画する図形を示す文字列を返すメソッドを実装する
-	 * @see e13_1_shape.AbstractShape#toString()
+	 * @see e13_1_shape.AbstractLine#toString()
 	 */
 	@Override public String toString(){
 		// 描画する図形を示す文字列を返す
-		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RECTANGLE, mWidth, mHeight);
+		return TEXT_SHAPE_RIGHT_TRIANGLE;
 	}
-
+	
 	/*************************************************
-		メソッド
+		メソッド実装
 	*************************************************/
-	/*
-	 * 長方形を描画するメソッドを設定する
-	 * @see e13_1_shape.AbstractShape#mDraw()
-	 */
+	// 左下直角三角形を描画するメソッドを定義する
 	public void mDraw(){
-		// 描画のするために高さ分処理を繰り返す
-		for (int heightCount = NUMBER_FIRST_COUNT;heightCount < mHeight; heightCount++){
-			// 描画するために幅分処理を繰り返す
-			for (int widthCount = NUMBER_FIRST_COUNT;widthCount < mWidth; widthCount++){
+		// 大きさを取得する
+		int size = mGetSize();
+		// 描画のするために大きさ分処理を繰り返す
+		for (int heightCount = NUMBER_FIRST_COUNT;heightCount < size; heightCount++){
+			// カウントに応じた幅を表示する
+			for(int widthCount = NUMBER_FIRST_COUNT; widthCount <= heightCount; widthCount++){
 				// 点を描画する
 				System.out.print(DRAW_FILL);
 			}

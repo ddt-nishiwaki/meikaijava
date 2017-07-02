@@ -2,7 +2,9 @@ package e13_1_shape;
 /*************************************************
 	インポート
 *************************************************/
-// 図形クラス共用定数を読み込む
+// 全パッケージ共有定数を読み込む
+import static common.CommonConstants.*;
+
 public abstract class AbstractRightTriangle extends AbstractShape{
 
 	/*************************************************
@@ -17,16 +19,17 @@ public abstract class AbstractRightTriangle extends AbstractShape{
 		インスタンス変数
 	*************************************************/
 	// サイズフィールドを定義する
-	private int mSize;
+	private int mSize = INITIALIZE_ZERO;
 	
 	/*************************************************
 		コンストラクタ
 	*************************************************/
+	// 何もしないコンストラクタを設定する
+	public AbstractRightTriangle(){}
 	// 大きさを設定するコンストラクタを設定する
 	public AbstractRightTriangle(int size){
 		mSize = size;
 	}
-
 	
 	/*************************************************
 		ゲッター
@@ -38,5 +41,15 @@ public abstract class AbstractRightTriangle extends AbstractShape{
 		// 大きさの設定を返す
 		return mSize;
 	}
-	
+	/*************************************************
+		セッター
+	*************************************************/
+	/*
+	 * 大きさを設定するセッターを定義する
+	 */
+	protected void mSetSize(int size){
+		// 大きさを設定する
+		mSize = size;
+	}
+
 }

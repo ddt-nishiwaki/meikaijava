@@ -24,7 +24,8 @@ public class CommonShapeConstants {
 	/*************************************************
 		定数(数値)
 	*************************************************/
-	// 点描画に使用する文字を設定する
-	public static final int NUMBER_START_COUNT = 0;
+	// 配列の最初のインデックスを示す文字列を設定する
+	public static final int NUMBER_FIRST_COUNT = 0;
+	
 
 }
