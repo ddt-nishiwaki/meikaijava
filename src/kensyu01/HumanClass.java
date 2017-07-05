@@ -1,52 +1,123 @@
 package kensyu01;
 
-/*** class ***********************/
+/****************************************************
+	クラス
+****************************************************/
+
+/**
+ * 人間を作成するクラスです。
+ * 人間は名前と、身長と、体重を持ちます
+ * それぞれのフィールドに対してアクセサが設定されています。
+ * toStringメソッドを実装しています。
+ * 
+ * @author wakkky05
+ *
+ */
 public class HumanClass {
 
-	/*** デフォルト設定 ***********************/
-	// デフォルトの名前を設定する
-	private String DEFAULT_NAME = "defaultName";
-	// デフォルトの身長を設定する
-	private float DEFAULT_HEIGHT = 100;
-	// デフォルトの体重を設定する
-	private float DEFAULT_WEIGHT = 100;
+	/****************************************************
+		定数
+	****************************************************/
+
+	/**
+	 * デフォルトの名前を設定する定数です。
+	 */
+	private static final String DEFAULT_NAME = "defaultName";
+	/**
+	 * デフォルトの身長を設定する定数です。
+	 */
+	private static final float DEFAULT_HEIGHT = 100;
+	/**
+	 * デフォルトの体重を設定する定数です。
+	 */
+	private static final float DEFAULT_WEIGHT = 100;
 	
-	/*** フィールド ***********************/
-	// 「名前」フィールドをデフォルトで初期化する
+
+	/****************************************************
+		インスタンス変数
+	****************************************************/
+
+	/**
+	 *  「名前」フィールド<br>
+	 *  デフォルトは DEFAULT_NAME を参照
+	 */
 	private String name = DEFAULT_NAME;			// 名前フィールドを設定する
-	// 「身長」フィールドをデフォルトで初期化する
+	/**
+	 *「身長」フィールド<br>
+	 * デフォルトは DEFAULT_HEIGHT を参照
+	 */
 	private float height = DEFAULT_HEIGHT;		// 身長フィールドを設定する
-	// 「体重」フィールドをデフォルトで初期化する
+	/**
+	 * 「体重」フィールド<br>
+	 * デフォルトは DEFAULT_WEIGHT を参照
+	 */
 	private float weight = DEFAULT_WEIGHT;		// 体重フィールドを設定する
-	// 「誕生日」フィールドをデフォルトで初期化する
+	/**
+	 * 「誕生日」フィールド<br>
+	 * デフォルトは Day()
+	 */
 	private Day birthday = new Day();			// 誕生日フィールドを設定する
 
-	/*** 出力フォーマット ***********************/
-	// 設定を出力するためのフォーマットを設定する
+
+	/****************************************************
+		出力フォーマット
+	****************************************************/
+
+	/**
+	 * 人間の各フィールドを出力するためのフォーマット
+	 * 名前 : String
+	 * 身長 : float
+	 * 体重 : float
+	 * 誕生日 : String
+	 */
 	private static final String FORMAT_OUTPUT_SETTING = "名前 : %s\n身長 : %3.1f\n体重 : %3.1f\n誕生日 : %s\n";
 
-	/*** コンストラクタ ***********************/
-	// 名前と身長と体重をセットするコンストラクタを設定する
+
+	/****************************************************
+		コンストラクタ
+	****************************************************/
+
+	/**
+	 *  引数がない場合はデフォルト値が設定された状態となります
+	 */
 	HumanClass (){}
-	// 名前と身長と体重をセットするコンストラクタを設定する
-	HumanClass ( String name){
-		/*** instance variable *********************/
+	/**
+	 * 指定した名前を設定します。
+	 * 他のフィールドはデフォルト値が設定された状態となります
+	 * @param name 名前を設定するフィールド
+	 */
+	HumanClass ( String name ){
 		this.name = name;			// 名前をセットする
 	}
-	// 名前と身長と体重をセットするコンストラクタを設定する
+	/**
+	 * 指定した名前と身長を設定します。
+	 * @param name 名前を設定するフィールド
+	 * @param height 身長を設定するフィールド
+	 */
 	HumanClass ( String name, float height){
-		/*** instance variable *********************/
 		this.name = name;			// 名前をセットする
 		this.height = height;		// 高さをセットする
 	}	
-	// 名前と身長と体重をセットするコンストラクタを設定する
+	
+	/**
+	 * 名前と身長と体重を設定します。
+	 * @param name 名前を設定するフィールド
+	 * @param height 身長を設定するフィールド
+	 * @param weight 体重を設定するフィールド
+	 */
 	HumanClass ( String name, float height, float weight){
 		/*** instance variable *********************/
 		this.name = name;			// 名前をセットする
 		this.height = height;		// 高さをセットする
 		this.weight = weight;		// 体重をセットする
 	}
-	// 名前と身長と体重をセットするコンストラクタを設定する
+	/**
+	 * 名前と身長と体重をセットするコンストラクタを設定する
+	 * @param name 名前を設定するフィールド
+	 * @param height 身長を設定するフィールド
+	 * @param weight 体重を設定するフィールド
+	 * @param birthday 誕生日を設定するフィールド
+	 */
 	HumanClass ( String name, float height, float weight, Day birthday){
 		/*** instance variable *********************/
 		this.name = name;			// 名前をセットする
@@ -55,28 +126,50 @@ public class HumanClass {
 		this.birthday = birthday;	// 誕生日をセットする
 	}
 	
-	/*** method ***********************/
-	// 名前を取得するメソッドを設定する
+	/****************************************************
+		コンストラクタ
+	****************************************************/
+
+	/**
+	 * 設定した名前を文字列で取得します
+	 * @author wakkky05
+	 * @return String
+	 * 
+	 */
 	String getName(){
 		// 名前を返す
 		return this.name;
 	}
-	// 身長を取得するメソッドを設定する
+	/**
+	 * 設定した身長をfloat型で取得します
+	 * @return float
+	 */
 	float getHeight(){
 		// 身長を返す
 		return this.height;
 	}
-	// 体重を取得するメドッドを設定する
+	/**
+	 * 設定した体重をfloat型で取得します
+	 * @return float
+	 */
 	float getWeight(){
 		// 体重を返す
 		return this.weight;
 	}
-	// 誕生日を取得するメソッドを設定する
+	/**
+	 * 設定した誕生日を取得します
+	 * @return Day
+	 */
 	Day getBirthday(){
 		// 体重を返す
 		return this.birthday;
 	}
-	// インスタンスの設定を出力するメソッドを設定する
+	/**
+	 * インスタンスの設定を取得します
+	 * 以下のフォーマット文字列を返します
+	 * 名前 : %s\n身長 : %3.1f\n体重 : %3.1f\n誕生日 : %s\n
+	 * @return String
+	 */
 	public String toString() {
 		// 誕生日を文字列で取得する
 		String birthDay = this.birthday.toString();
