@@ -19,12 +19,13 @@ public class RightTriangleLowerRight extends AbstractRightTriangle{
 		定数(文字列)
 	*************************************************/
 	// オフセットの数を調整するための値を設定する
-	public static final int NUMBER_FORMAT_OFFSET = -1;
+	private static final int NUMBER_FORMAT_OFFSET = -1;
 	// 描画する図形を示す文字列を設定する
-	public static final String TEXT_SHAPE_RIGHT_TRIANGLE = "RightTriangle";
+	private static final String TEXT_SHAPE_RIGHT_TRIANGLE = "RightTriangle";
 	// 図形の描画を調整する余白を設定する
-	public static final String OFFSET_DRAW = " ";
-	
+	private static final String OFFSET_DRAW = " ";
+	// toStringの返値フォーマットを設定する
+	private static final String FORMAT_OUTPUT_TO_STRING = "%s(size: %d, 面積: %d)";
 	
 	
 	/*************************************************
@@ -46,13 +47,13 @@ public class RightTriangleLowerRight extends AbstractRightTriangle{
 	 */
 	@Override public String toString(){
 		// 描画する図形を示す文字列を返す
-		return TEXT_SHAPE_RIGHT_TRIANGLE;
+		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RIGHT_TRIANGLE, mGetSize(), mGetArea());
 	}
 	/**
-	 * @auther
-	 * @set
+	 * 右上直角三角形を描画するメソッドを定義する
+	 * @auther Wakkky05
 	 */
-	// 右上直角三角形を描画するメソッドを定義する
+
 	public void mDraw(){
 		// 大きさを取得する
 		int size = mGetSize();

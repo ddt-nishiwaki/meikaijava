@@ -18,8 +18,9 @@ public class RightTriangleUpperLeft extends AbstractRightTriangle {
 		定数(文字列)
 	*************************************************/
 	// 描画する図形を示す文字列を設定する
-	public static final String TEXT_SHAPE_RIGHT_TRIANGLE = "RightTriangle";
-	
+	private static final String TEXT_SHAPE_RIGHT_TRIANGLE = "RightTriangle";
+	// toStringの返値フォーマットを設定する
+	private static final String FORMAT_OUTPUT_TO_STRING = "%s(size: %d, 面積: %d)";
 	
 	/*************************************************
 		コンストラクタ
@@ -42,7 +43,7 @@ public class RightTriangleUpperLeft extends AbstractRightTriangle {
 	 */
 	@Override public String toString(){
 		// 描画する図形を示す文字列を返す
-		return TEXT_SHAPE_RIGHT_TRIANGLE;
+		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RIGHT_TRIANGLE, mGetSize(), mGetArea());
 	}
 	
 	/*************************************************

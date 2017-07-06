@@ -25,6 +25,7 @@ public class RightTriangleChecker extends AbstractShapeChecker{
 	// 図形のサイズ入力を求めるメッセージを設定する
 	private static final String MESSAGE_REQUEST_INPUT_SIZE = "サイズを入力してください";
 
+	
 	/*************************************************
 		直角三角形型配列
 	*************************************************/

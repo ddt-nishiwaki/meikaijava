@@ -13,7 +13,7 @@ public abstract class AbstractRightTriangle extends AbstractShape{
 	// 描画する図形を示す文字列を設定する
 	public static final String TEXT_SHAPE_RIGHT_TRIANGLE= "RightTriangle";
 	// toStringの返値フォーマットを設定する
-	public static final String FORMAT_OUTPUT_TO_STRING = "%s(size: %d)";
+	public static final String FORMAT_OUTPUT_TO_STRING = "%s(size: %d,面積: %d)";
 
 	/*************************************************
 		インスタンス変数
@@ -51,5 +51,14 @@ public abstract class AbstractRightTriangle extends AbstractShape{
 		// 大きさを設定する
 		mSize = size;
 	}
-
+	/***************************************************
+		インターフェース実装
+	****************************************************/
+	/**
+	 * 面積を求めるメソッドの実装を強制します
+	 */
+	public int mGetArea(){
+		// 面積を求めて返す
+		return mSize;
+	};	
 }

@@ -9,15 +9,15 @@ import static e13_1_shape.CommonShapeConstants.*;
 /*************************************************
 	クラス
 *************************************************/
-public class Rectangle extends AbstractShape{
+public class Rectangle extends AbstractShape implements Plane2D{
 
 	/*************************************************
 		定数(文字列)
 	*************************************************/
 	// 描画する図形を示す文字列を設定する
-	public static final String TEXT_SHAPE_RECTANGLE = "Rectangle";
+	private static final String TEXT_SHAPE_RECTANGLE = "Rectangle";
 	// toStringの返値フォーマットを設定する
-	public static final String FORMAT_OUTPUT_TO_STRING = "%s(width: %d, height: %d)";
+	private static final String FORMAT_OUTPUT_TO_STRING = "%s(width: %d, height: %d, 面積: %d)";
 
 	/*************************************************
 		インスタンス変数
@@ -47,11 +47,11 @@ public class Rectangle extends AbstractShape{
 	 */
 	@Override public String toString(){
 		// 描画する図形を示す文字列を返す
-		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RECTANGLE, mWidth, mHeight);
+		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RECTANGLE, mWidth, mHeight, mGetArea());
 	}
 
 	/*************************************************
-		メソッド
+		抽象メソッド実装
 	*************************************************/
 	/*
 	 * 長方形を描画するメソッドを設定する
@@ -69,4 +69,15 @@ public class Rectangle extends AbstractShape{
 			System.out.println();
 		}
 	};
+	
+	/***************************************************
+		インターフェース実装
+	****************************************************/
+	/**
+	 * 面積を求めるメソッドの実装を強制します
+	 */
+	public int mGetArea(){
+		// 面積を求めて返す
+		return mWidth * mHeight;
+	};	
 }

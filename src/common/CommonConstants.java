@@ -10,6 +10,8 @@ public class CommonConstants {
 
 	// 0 で初期化するための値を設定する
 	public static final int INITIALIZE_ZERO = 0;
+	// for分のカウントの最初の値を設定する
+	public static final int NUMBER_START_COUNT = 0;
 	// 数値を配列のインデックスに変換するための値を設定する
 	public static final int NUMBER_FORMAT_INDEX = -1;
 	// 乱数の出力を調整する値を設定する
