@@ -20,5 +20,5 @@ public interface ExPlayer extends Player {
 	/**
 	 * スロウ再生メソッドの実装を強制します
 	 */
-	void mSlow();
+	void slow();
 }

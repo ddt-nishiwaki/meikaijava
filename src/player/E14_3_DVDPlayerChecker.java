@@ -36,17 +36,17 @@ public class E14_3_DVDPlayerChecker {
 		// 再生テストを行うことをメッセージ出力します
 		System.out.println(MESSAGE_CHECK_PLAY_BUTTON);
 		// 再生メソッドの出力を確認します
-		testPlayer.mPlay();
+		testPlayer.play();
 		
 		// スロー再生テストを行うことをメッセージ出力します
 		System.out.println(MESSAGE_CHECK_SLOW_BUTTON);
 		// スロー再生メソッドの出力を確認します
-		testPlayer.mSlow();;
+		testPlayer.slow();;
 
 		// 停止テストを行うことをメッセージ出力します
 		System.out.println(MESSAGE_CHECK_STOP_BUTTON);
 		// 停止メソッドの出力を確認します
-		testPlayer.mStop();;
+		testPlayer.stop();;
 		
 	}
 }

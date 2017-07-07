@@ -21,11 +21,11 @@ public interface Player {
 	/**
 	 * 再生メソッドの実装をインスタンスに強制します
 	 */
-	void mPlay();
+	void play();
 
 	/**
 	 * 停止メソッドの実装を強制します
 	 */
-	void mStop();
+	void stop();
 
 }

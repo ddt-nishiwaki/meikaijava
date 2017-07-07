@@ -18,21 +18,21 @@ public class DVDPlayer implements ExPlayer{
 	/**
 	 * 再生を行うことをメッセージ出力します
 	 */
-	public void mPlay(){
+	public void play(){
 		System.out.printf(FORMAT_PLAY,MEDIA_NAME);
 	}
 
 	/**
 	 * 停止を行うことをメッセージ出力します
 	 */
-	public void mStop(){
+	public void stop(){
 		System.out.printf(FORMAT_STOP,MEDIA_NAME);
 	}
 
 	/**
 	 * スロウ再生を行うことをメッセージ出力します
 	 */
-	public void mSlow(){
+	public void slow(){
 		System.out.printf(FORMAT_SLOW_PLAY,MEDIA_NAME);
 	}
 }
