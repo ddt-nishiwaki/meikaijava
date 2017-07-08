@@ -3,14 +3,20 @@ package pet;
 /************************************************************
 	 インポート
 ************************************************************/
-// 全パッケージ共有のオブジェクトを読み込む
-import static common.CommonObject.*;
+// スキャナークラスを読み込む
+import java.util.Scanner;
+// スキャナーのシングルトンを読み込む
+import common.SingletonScannerVer1;
 /**
  * 着せ替えインターフェースを実装したロボットペットクラスのチェックを行うクラス
  * @author wakkky05
  *
  */
 public class E14_2_RobotPetCheckerWithSkinnableInterface {
+	/************************************************************
+	 	スキャナー
+	************************************************************/
+	private static Scanner sInputScanner = SingletonScannerVer1.getInstance();
 	
 	/************************************************************
 	 	定数(String)
