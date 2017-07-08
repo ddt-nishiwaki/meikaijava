@@ -23,12 +23,6 @@ public class E15_3_SearchStringChecker {
 	private static final String MESSAGE_REQUEST_TARGET_STRING = "検索対象の文字列を入力してください";
 	// 検索する文字列の入力を求めるメッセージです
 	private static final String MESSAGE_REQUEST_SEARCH_STRING = "検索する文字列を入力してください";
-	// 文字列入力待ちを示すテキストフォーマットです
-	private static final String FORMAT_REQUEST_INPUT_STRING = "文字列 %d を入力 : \n";
-	// 各文字列を示すテキストフォーマットです
-	private static final String FORMAT_OUTPUT_ANY_STRING = "文字列 %d : \n";
-	// 空白文字を設定する
-	private static final String TEXT_WHITE_SPACE = " ";
 	// 入力した文字列を出力するフォーマットです
 	private static final String FORMAT_OUTPUT_INPUT_STRING = "検索対象 : %s\n";
 	// 検索結果がないことを示すメッセージを設定する
