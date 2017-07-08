@@ -12,6 +12,15 @@ import static common.CommonConstants.*;
  */
 public class CustomeStringMethod {
 
+	/*********************************************
+		定数(String)
+	*********************************************/
+	// 検索対象が存在しないことを示す値を設定する
+	private static final int NUMBER_RESULT_NO_MATCH = -1;
+
+	// 空白文字を設定する
+	private static final String TEXT_WHITE_SPACE = " "; 
+
 	/**
 	 * 文字列を逆順にして返します
 	 * @return String
@@ -29,5 +38,31 @@ public class CustomeStringMethod {
 		return reverseString;
 	}
 	
-	
+	/**************************************
+		クラスメソッド
+	**************************************/
+	/**
+	 * 対象文字列から検索文字列を検索し、マッチしない部分を空白文字に置き換えた文字列を返します
+	 * マッチしない場合は空白文字を返します
+	 * @return String
+	 */
+	public static String SearchString(String targetString, String searchString){
+		int numberSearchResult;		// 文字列検索結果を保持する変数です
+		String resultSearch = "";
+		// 検索対象が存在するか調べてその結果を保持する
+		numberSearchResult = targetString.indexOf(searchString);
+		// 検索対象が存在した場合の処理を行う
+		if (numberSearchResult != NUMBER_RESULT_NO_MATCH){
+			// マッチした文字列より前のインデックス分の空白文字を作る
+			for(int charCount = NUMBER_START_COUNT; charCount < numberSearchResult; charCount++){
+				// マッチしない部分に空白文字を設定する
+				resultSearch += TEXT_WHITE_SPACE;
+			}
+			// 検索対象文字列を追加する
+			resultSearch += searchString;
+		}
+		// 検索結果を返す
+		return resultSearch;
+		
+	}
 }
