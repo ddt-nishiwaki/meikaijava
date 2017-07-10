@@ -1,4 +1,4 @@
-package RockPaperScissors;
+package rockpaperscissors;
 
 /**************************************
 	インポート
@@ -173,9 +173,9 @@ public class ScenePlayRockPaperScissers {
 		// じゃんけんを繰り返す
 		do{
 			// プレーヤー(人間)の手を設定する
-			humanHand = human.mDecideHand();
+			humanHand = human.decideHand();
 			// プレーヤー(コンピューター)の手を設定する
-			computerHand = computer.mDecideHand();
+			computerHand = computer.decideHand();
 			// 互いの手を確認する
 			System.out.printf(FORMAT_SHOW_HAND, mGetPlayerHand(humanHand),mGetPlayerHand(computerHand));
 			// 勝負結果を取得する
@@ -185,7 +185,7 @@ public class ScenePlayRockPaperScissers {
 			// 勝負を続けるかどうか尋ねる
 			System.out.println(MESSAGE_REQUEST_CONTINUE_GAME);
 		// 終了コマンドが入力されるまで繰り返す
-		}while(sInputYesOrNo() != NUMBER_GAME_END);
+		}while(inputYesOrNo() != NUMBER_GAME_END);
 		// ゲームを終了することを示すメッセージを出力する
 		System.out.println(MESSAGE_END_GAME);
 	}

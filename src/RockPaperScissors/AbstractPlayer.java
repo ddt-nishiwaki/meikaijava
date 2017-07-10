@@ -1,4 +1,4 @@
-package RockPaperScissors;
+package rockpaperscissors;
 
 /**
  * じゃんけんプレーヤの抽象クラス
@@ -29,5 +29,5 @@ public abstract class AbstractPlayer {
 	 * 1...グー / 2...チョキ / 3...パー
 	 * のいずれかを返す
 	 */
-	public abstract int mDecideHand();
+	public abstract int decideHand();
 }

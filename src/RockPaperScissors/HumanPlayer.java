@@ -1,4 +1,4 @@
-package RockPaperScissors;
+package rockpaperscissors;
 
 /**************************************
 	インポート
@@ -38,7 +38,7 @@ public class HumanPlayer extends AbstractPlayer{
 	 * 1...グー / 2...チョキ / 3...パー
 	 * のいずれかの値を返す
 	 */
-	public int mDecideHand(){
+	public int decideHand(){
 		// 入力されたコマンドを保持する変数を宣言する
 		int inputCommand;
 		// グーチョキパーのいずれかを確実に入力させる

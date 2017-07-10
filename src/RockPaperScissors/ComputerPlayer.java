@@ -1,4 +1,4 @@
-package RockPaperScissors;
+package rockpaperscissors;
 
 /**************************************
 	インポート
@@ -37,7 +37,7 @@ public class ComputerPlayer extends AbstractPlayer{
 	 * 1...グー / 2...チョキ / 3...パー
 	 * のいずれかの値を返す
 	 */
-	public int mDecideHand(){
+	public int decideHand(){
 		// 入力されたコマンドを返す
 		return generateHand.nextInt(COMMAND_MAX) + NUMBER_FORMAT_RAMDOM;
 	};
