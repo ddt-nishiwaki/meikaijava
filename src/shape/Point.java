@@ -1,10 +1,6 @@
-package e13_1_shape;
+package shape;
 
-/*************************************************
-	インポート
-*************************************************/
-// 図形クラス共用定数を読み込む
-import static e13_1_shape.CommonShapeConstants.*;
+import static shape.CommonShapeConstants.*;
 
 /*************************************************
 	クラス

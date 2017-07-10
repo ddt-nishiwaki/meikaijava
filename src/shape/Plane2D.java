@@ -1,4 +1,4 @@
-package e13_1_shape;
+package shape;
 
 /**
  * 二次元インターフェース
