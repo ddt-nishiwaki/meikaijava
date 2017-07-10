@@ -57,7 +57,7 @@ public class Parallelogram extends AbstractShape implements Plane2D {
 	 * @return String
 	 */
 	@Override public String toString(){
-		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_PARALLELOGRAM, mWidth, mHeight, mGetArea());
+		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_PARALLELOGRAM, mWidth, mHeight, getArea());
 	};
 
 	/***************************************************
@@ -109,7 +109,7 @@ public class Parallelogram extends AbstractShape implements Plane2D {
 	/**
 	 * 面積を求めるメソッドの実装を強制します
 	 */
-	public int mGetArea(){
+	public int getArea(){
 		// 面積を求めて返す
 		return mWidth * mHeight;
 	};

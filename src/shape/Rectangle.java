@@ -43,7 +43,7 @@ public class Rectangle extends AbstractShape implements Plane2D{
 	 */
 	@Override public String toString(){
 		// 描画する図形を示す文字列を返す
-		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RECTANGLE, mWidth, mHeight, mGetArea());
+		return String.format(FORMAT_OUTPUT_TO_STRING, TEXT_SHAPE_RECTANGLE, mWidth, mHeight, getArea());
 	}
 
 	/*************************************************
@@ -72,7 +72,7 @@ public class Rectangle extends AbstractShape implements Plane2D{
 	/**
 	 * 面積を求めるメソッドの実装を強制します
 	 */
-	public int mGetArea(){
+	public int getArea(){
 		// 面積を求めて返す
 		return mWidth * mHeight;
 	};	

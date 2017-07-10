@@ -9,5 +9,5 @@ public interface Plane2D {
 	/**
 	 * 面積を求めるメソッドの実装を強制します
 	 */
-	int mGetArea();
+	int getArea();
 }
