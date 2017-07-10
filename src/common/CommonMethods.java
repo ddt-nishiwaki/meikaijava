@@ -34,7 +34,7 @@ public class CommonMethods {
 		クラスメソッド
 	****************************************/
 	// yes / no の入力を求めるメソッドを定義する
-	public static int sInputYesOrNo(){
+	public static int inputYesOrNo(){
 		// ユーザーの入力を保持する変数を宣言する
 		int inputCommand;
 		// yes/noを確実に入力させる
