@@ -16,6 +16,8 @@ public class CommonConstants {
 	public static final int NUMBER_FIRST_INDEX = 0;
 	// 数値を配列のインデックスに変換するための値を設定する
 	public static final int NUMBER_FORMAT_INDEX = -1;
+	// 配列のインデックスを実際の数値に変換するための値を設定する
+	public static final int NUMBER_FORMAT_NUMBER = 1;
 	// 乱数の出力を調整する値を設定する
 	public static final int NUMBER_FORMAT_RAMDOM = 1;
 	
