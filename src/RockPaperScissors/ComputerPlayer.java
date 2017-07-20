@@ -21,7 +21,7 @@ public class ComputerPlayer extends AbstractPlayer{
 		定数(数値)
 	**************************************/
 	// コマンドの最大値を設定する
-	private static final int COMMAND_MAX = 3;
+	private static final int COMMAND_MAX = 2;
 
 	/**************************************
 		乱数オブジェクト
