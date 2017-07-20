@@ -18,8 +18,6 @@ public class Sum {
 	public static double sum(String[] operandList){
 		// 合計値を求めるための変数を設定します
 		double sum = INITIALIZE_ZERO;
-		// 引数の要素数を取得します
-		int operandLength = operandList.length;
 		// 全ての配列要素にアクセスします
 		for(String element : operandList){
 			sum += Double.parseDouble( element );
