@@ -112,7 +112,7 @@ public class CalendarPrinter {
 		クラス変数
 	********************************************/
 	// 曜日を示すテキストの一覧です
-	private static String[] sWeekList = {
+	private static final String[] sWeekList = {
 		SUNDAY,			//日曜 
 		MONDAY,			//月曜
 		TUESDAY,		//火曜 
@@ -122,7 +122,7 @@ public class CalendarPrinter {
 		SATURDAY		//土曜
 	};
 	// 月を示すテキストの一覧です
-	private static String[] sMonthList = {
+	private static final String[] sMonthList = {
 		JANUARY,		//1月
 		FEBRUARY,		//2月 
 		MARCH,			//3月	
@@ -224,14 +224,14 @@ public class CalendarPrinter {
 			// 月が設定された状態を保持する
 			mSettingMonth = mCalendarSetting.get(MONTH);
 			// 出力範囲を設定した月に限定する
-			LimitPrintMonthRange();
+			limitPrintMonthRange();
 		};
 	}
 
 	/**
 	 * 出力する'月の範囲'を変更した月に限定します
 	 */
-	private void LimitPrintMonthRange(){
+	private void limitPrintMonthRange(){
 		// 出力する月の数を 1 に設定する
 		mPrintMonthLength = ONE_PRINT_MONTH;
 	}
