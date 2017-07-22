@@ -20,6 +20,7 @@ public class E15_5_RockPaperScissors {
 	/*******************************************
 		定数(String)
 	*******************************************/
+	private static final String MESSAGE_PROCESS = "じゃんけんを開始します";
 	private static final String DRAW_GAME = "引き分けです";
 	private static final String WIN_GAME = "あなたの勝ちです";
 	private static final String LOSE_GAME = "あなたの負けです";
@@ -37,6 +38,12 @@ public class E15_5_RockPaperScissors {
 	*******************************************/
 	// 引き分けをしめす値を設定します
 	private static final int NUMBER_DRAW = -1;
+	// グーを示す値を設定する
+	private static final int COMMAND_ROCK = 1;
+	// チョキを示す値を設定する
+	private static final int COMMAND_SCISSERS = 2;
+	// パーを示す値を設定する
+	private static final int COMMAND_PAPER = 3;
 	// 手を次の手にシフトする値を設定する
 	private static final int SHIFT_NEXT_HAND = 1;
 	// じゃんけんの手の種類の数を設定する
@@ -79,17 +86,20 @@ public class E15_5_RockPaperScissors {
 	 * じゃんけんを行います
 	 */
 	private static void playGame(AbstractPlayer myPlayer,AbstractPlayer otherPlayer1,AbstractPlayer otherPlayer2){
+		int command;	// プレイを続けるかどうか決めるコマンドを保持する変数です
 		// じゃんけんを繰り返します
 		do {
 			// プレーヤー1の手を決定します
 			int myHands = myPlayer.decideHand();
 			// プレーヤー2の手を決定します
 			int other1Hands = otherPlayer1.decideHand();
+//			int other1Hands = 2;
 			// プレーヤー3の手を決定します
 			int other2Hands = otherPlayer2.decideHand();
+//			int other2Hands = 3;
 			// 各プレーヤーの手を確認します
 			System.out.printf(FORMAT_OUTPUT_HANDS, sTextPlayerHand[--myHands],
-					sTextPlayerHand[other1Hands],sTextPlayerHand[other2Hands]);
+					sTextPlayerHand[--other1Hands],sTextPlayerHand[--other2Hands]);
 			// 勝負した結果を表示します
 			System.out.println( getGameResult(myHands, other1Hands, other2Hands) );
 			// プレイを続けるか入力を求める
