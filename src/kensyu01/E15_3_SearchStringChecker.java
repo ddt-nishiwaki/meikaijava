@@ -32,6 +32,10 @@ public class E15_3_SearchStringChecker {
 	private static final String FORMAT_OUTPUT_SEARCH_STRING = "検索結果 : %s\n";
 	/**
 	 * 対象文字列から検索文字列を探して表示します
+	 * 
+	 * 表示仕様(abcdefからbcdを検索した場合)
+	 * 	検索対象 : abcdef
+	 * 	検索結果 :  bcd  
 	 * @param arg
 	 */
 	public static void main(String[] arg){
@@ -57,12 +61,15 @@ public class E15_3_SearchStringChecker {
 		/**************************************
 			検索マッチした文字列を出力する
 		**************************************/
-		if(searchString != EMPTY_STRING){
-			// 検索対象を比較のために出力します
+		// 検索マッチした場合の処理を行う
+		if( !(searchString.equals(EMPTY_STRING)) ){
+			// 検索対象を表示仕様に合わせて出力します
 			System.out.printf(FORMAT_OUTPUT_INPUT_STRING,SearchString(targetString, targetString) );
-			// 検索結果を出力します
+			// 検索結果を表示仕様に合わせて出力します
 			System.out.printf(FORMAT_OUTPUT_SEARCH_STRING,SearchString(targetString, searchString) );
+		// 検索マッチしない場合の処理を行う
 		} else {
+			// 検索マッチしなかったことをメッセージで出力する
 			System.out.println(MESSAGE_NO_MATCH);
 		}
 	}
